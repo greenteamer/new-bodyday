@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href="{{STATIC_URL}}themeBodyDay/css/iframe.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+<body>
+    <h1>Форма добавления комментария</h1>
+    <div class="myForm">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

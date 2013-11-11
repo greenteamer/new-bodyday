@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+<!--top content-->
+{% block top_content %}
+    <div class="row">
+        <div class="span3"><a id="popup" class="button2" href="/contact">Оставить заявку</a></div>
+        <div class="span9 slogan">Профессионализм в каждом движении</div>
+    </div>
+{% endblock %}
+<!--block content-->
+{% block content %}
+    <div class="row">
+        <div class="span9">
+            <div class="page_detail">
+                <p>{{ page.datetime }}</p>
+                <h2>{{ page.title }}</h2>
+                <img class="main_image" src="{{ page.image.url }}">
+                <p>{{ page.content|safe }}</p>
+            </div>
+        </div>
+        <!--sidebar-->
+        <div class="span3 sidebar">
+            <h3>Последние статьи</h3>
+            {% for post in post_in_page %}
+                <ul>
+                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                </ul>
+            {% empty %}
+                    <p>Нет постов</p>
+            {% endfor %}
+            <h3>Техника</h3>
+            <div class="gallery_list">
+                {% for photo in photo %}
+                    {{ photo.get_mini_html|safe }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

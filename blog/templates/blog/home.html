@@ -1,0 +1,106 @@
+{% extends 'blog/base.html' %}
+
+<!--header-->
+{% block header %}
+    <div class="page-header my_header">
+        <div class="my_header_bg"><img src="{{ STATIC_URL }}themeBodyDay/images/slide_2.jpg"></div>
+        <div class="my_header_content">
+            <div class="container">
+                <div class="header_text">
+                    <div class="row">
+                        <div class="span9">
+                            <div class="header_slogan">
+                                <h4 >Ищите мастера по массажу?</h4>
+                                <h4>Вы на правильном пути!</h4>
+                                <a class="button" href="/review">Отзывы</a>
+                            </div>
+                        </div>
+                        <div class="span3">
+                            <div class="header_img_wrapper">
+                                <img src="{{ STATIC_URL }}/media/img/sergei2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!--top content-->
+{% block top_content %}
+        <div class="span12 midle_slogan">
+            <div class="slogan">Сергей Константинович Корябин</div>
+        </div>
+{% endblock %}
+
+<!--middle content-->
+{% block middle_content %}
+    <div class="span12 slogan_content">
+        <h1 class="slogan_h1">Исцеление начинается здесь</h1>
+    </div>
+    <div class="span12">
+        <div class="row">
+            <div class="span7 main_post_padding">
+                {% for post in last_posts %}
+                    {% if post.post_in_main %}
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{{ post.image.url }}">
+                                </div>
+                                <div class="span5">
+                                    <h5>{{ post.title }}</h5>
+                                    <p class="datetime">{{ post.datetime }}</p>
+                                    <p>{{ post.content|removetags:"img"|truncatewords:"50"|safe }}<p>
+                                    <a class="button2" href="{{ post.get_absolute_url }}">читать</a>
+                                </div>
+                            </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="span5">
+                <div class="main_post_separator sidebar">
+                    <h2>Узнайте больше о видах и преимуществах разных техник массажа</h2>
+                    <ul>
+                    {% for post in last_posts %}
+                        <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!--content-->
+{% block content %}
+    <div class="row top_seporator">
+        {% for page in page_context %}
+            {% if page.page_in_main %}
+                <div class="span4">
+                    <img src="{{ page.image.url }}">
+                    <h2>{{ page.title }}</h2>
+                    <h5 class="page_description">{{ page.description }}</h5>
+                    <p>{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</p>
+                    <a class="button2" href="{{ page.get_absolute_url }}">подробнее</a>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>Нет постов</p>
+        {% endfor %}
+    </div>
+{% endblock%}
+
+<!--sidebar-->
+{#{% block sidebar %}#}
+{#    <div class="span3">#}
+{#        <h2>Сайдбар</h2>#}
+{#        {% for post in last_posts %}#}
+{#            <ul>#}
+{#            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>#}
+{#            </ul>#}
+{#        {% empty %}#}
+{#                <p>Нет постов</p>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#{% endblock %}#}

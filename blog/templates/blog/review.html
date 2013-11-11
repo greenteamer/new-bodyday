@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+<!--top content-->
+{% block top_content %}
+    <div class="row">
+        <div class="span3"><a id="popup" class="button2" href="/contact">Оставить заявку</a></div>
+        <div class="span9 slogan">Профессионализм в каждом движении</div>
+    </div>
+{% endblock %}
+<!--content-->
+{% block content %}
+    <div class="row">
+        <div class="span9">
+            <div class="blog_list">
+                {% for review in review_context %}
+                    {% if review.review_in_page %}
+                    <div class="review_list">
+                        <p>{{ review.datetime }}</p>
+                        <h2>{{ review.title }}</h2>
+                        <p>{{ review.review|removetags:"img"|safe }}</p>
+                    </div>
+                    {% endif %}
+                {% empty %}
+                    <p>Нет постов</p>
+                {% endfor %}
+            </div>
+        <a href="/add-review" class="button2" id="popup">добавить отзыв</a>
+        </div>
+        <!--sidebar-->
+        <div class="span3 sidebar">
+            <h3>Последние статьи</h3>
+            {% for post in post_in_page %}
+                <ul>
+                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                </ul>
+            {% empty %}
+                    <p>Нет постов</p>
+            {% endfor %}
+{#            <h3>Техника</h3>#}
+{#            <div class="gallery_list">#}
+{#                {% for photo in photo %}#}
+{#                    {{ photo.get_mini_html|safe }}#}
+{#                {% endfor %}#}
+{#            </div>#}
+        </div>
+    </div>
+{% endblock%}

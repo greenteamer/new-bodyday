@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+<!--top content-->
+{% block top_content %}
+    <div class="row">
+        <div class="span3"><a id="popup" class="button2" href="/contact">Оставить заявку</a></div>
+        <div class="span9 slogan">Профессионализм в каждом движении</div>
+    </div>
+{% endblock %}
+<!--content-->
+{% block content %}
+    <div class="row">
+        <div class="span9">
+            <div class="blog_list">
+                {% for page in page_context %}
+                    {% if page.page_in_main %}
+                        <div class="page_list">
+                            <p>{{ page.datetime }}</p>
+                            <h2><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h2>
+                            <img src="{{ page.image.url }}">
+                            <p>{{ page.content|removetags:"img"|safe }}</p>
+                            <a class="button2" href="{{ page.get_absolute_url }}">читать</a>
+                        </div>
+                    {% endif %}
+                {% empty %}
+                    <p>Нет постов</p>
+                {% endfor %}
+            </div>
+        </div>
+        <!--sidebar-->
+        <div class="span3 sidebar">
+            <h3>Последние статьи</h3>
+            {% for post in post %}
+                <ul>
+                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                </ul>
+            {% empty %}
+                    <p>Нет постов</p>
+            {% endfor %}
+            <h3>Техника</h3>
+            <div class="gallery_list">
+                {% for photo in photo %}
+                    {{ photo.get_mini_html|safe }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock%}
+

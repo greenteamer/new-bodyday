@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>My Blog</title>
+        <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="{{STATIC_URL}}themeBodyDay/css/global.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <script src="{{STATIC_URL}}bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}libraries/jquery-2.0.3.min.js"></script>
+        <link rel="stylesheet" href="{{STATIC_URL}}libraries/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{STATIC_URL}}libraries/fancybox/source/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox();
+
+                $("#popup").fancybox({
+                    'padding'           : 0,
+                    'width'             : '650px',
+                    'height'            : '700px',
+                    'autoScale'     	: false,
+                    'transitionIn'		: 'none',
+                    'transitionOut'		: 'none',
+                    'type'				: 'iframe'
+	            });
+            });
+        </script>
+        {%  block extrahead %}
+        {% endblock %}
+        <script type="text/javascript">
+            $(function(){
+            {% block jquery %}
+            {% endblock %}
+            });
+        </script>
+        <meta name='yandex-verification' content='4fba7c3f3c0f51c8' />
+    </head>
+<body>
+
+    <!--navigation-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner my_navbar_inner">
+            <div class="container">
+                <div class="brand my_brand"><a href="{% url 'home' %}">BodyDay.ru</a></div>
+                <ul class="nav my_nav">
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'blog:list' %}" class="">Список постов</a></li>
+                    <li><a href="{% url 'page:list' %}">Список страниц</a></li>
+                    <li><a href="{% url 'page:list' %}4">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--header-->
+    {% block header %}{% endblock %}
+    <!--top content-->
+    <div class="top_content">
+        <div class="container">
+                {% block top_content %}{% endblock %}
+        </div>
+    </div>
+
+    <!--middle content-->
+    <div class="middle_content">
+        <div class="container">
+            <div class="row">
+                {% block middle_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!--content-->
+    <div class="container my_container">
+        {% block content %}Empty page{% endblock %}
+        {% block sidebar %}{% endblock %}
+    </div> <!-- container -->
+</body>
+</html>
