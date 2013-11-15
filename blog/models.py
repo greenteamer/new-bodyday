@@ -10,6 +10,11 @@ class Post(models.Model):
     content = RichTextField()
     image = models.ImageField(upload_to='Blog_thumb')
 
+    class Meta:
+        verbose_name = ('Публикации')
+        verbose_name_plural = ('Публикация')
+        ordering = ['title']
+
     main_post_choice = models.CharField(
         max_length=7,
         choices=(('notmain', 'нет'),
@@ -30,6 +35,11 @@ class Page(models.Model):
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField()
     image = models.ImageField(upload_to='Page_thumb')
+
+    class Meta:
+        verbose_name = ('Страницы')
+        verbose_name_plural = ('Страница')
+        ordering = ['title']
 
     main_page_choice = models.CharField(
         max_length=7,
@@ -52,6 +62,13 @@ class Review(models.Model):
     sender = models.EmailField(u'Почта')
     review = RichTextField()
 
+    class Meta:
+        verbose_name = ('Отзывы')
+        verbose_name_plural = ('Отзыв')
+        ordering = ['title']
+
+    def __unicode__(self):
+        return self.title
     review_choice = models.CharField(
         max_length=7,
         choices=(('dontposted', 'нет'),
