@@ -9,17 +9,16 @@ class Post(models.Model):
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField()
     image = models.ImageField(upload_to='Blog_thumb')
-
-    class Meta:
-        verbose_name = ('Публикации')
-        verbose_name_plural = ('Публикация')
-        ordering = ['title']
-
     main_post_choice = models.CharField(
         max_length=7,
         choices=(('notmain', 'нет'),
                  ('main', 'да'),),
         default='',)
+
+    class Meta:
+        verbose_name = ('Публикации')
+        verbose_name_plural = ('Публикация')
+        ordering = ['title']
 
     def post_in_main(self):
         return self.main_post_choice=='main'
