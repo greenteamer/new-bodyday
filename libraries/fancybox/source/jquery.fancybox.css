@@ -56,6 +56,10 @@
 	-webkit-overflow-scrolling: touch;
 }
 
+.fancybox-type-iframe .fancybox-inner html body .myForm {
+    background: #767676;
+}
+
 .fancybox-error {
 	color: #444;
 	font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
