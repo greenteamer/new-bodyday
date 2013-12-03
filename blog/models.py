@@ -69,6 +69,7 @@ class Review(models.Model):
 
     def __unicode__(self):
         return self.title
+
     review_choice = models.CharField(
         max_length=7,
         choices=(('dontposted', 'нет'),

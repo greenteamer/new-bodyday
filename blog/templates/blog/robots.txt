@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin
+Disallow: /?
+
+User-agent: Yandex
+Disallow: /admin
+Disallow: /?
+
+Host: bodyday.ru
+Sitemap: http://bodyday.ru/sitemap.xml
