@@ -27,6 +27,16 @@
                     'transitionOut'		: 'none',
                     'type'				: 'iframe'
 	            });
+
+                $('a#hide_show').click(function (e) {
+                    $('.hide_form').toggleClass('active');
+                    e.preventDefault();
+                });
+
+                $('a#hide_show').click(function (e) {
+                    $('#hide_show').toggleClass('active');
+                    e.preventDefault();
+                });
             });
         </script>
         {%  block extrahead %}

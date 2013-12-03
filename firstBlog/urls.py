@@ -48,6 +48,9 @@ urlpatterns = patterns('',
     url(r'^thankyou2.html', 'blog.views.thankyou2'),
     url(r'^review/', ReviewListView.as_view(), name='review'),
     url(r'^add-review/', 'blog.views.addReview'),
+    # url(r'^add-review/', AddReview.as_view(), name='addReview'),
+
+    url(r'^comments/', include('django.contrib.comments.urls')),
 
     #for seo
     url(r'^robots\.txt$', TemplateView.as_view(template_name='blog/robots.txt'), name="robots"),
