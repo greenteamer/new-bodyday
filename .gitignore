@@ -18,10 +18,7 @@ atlassian-ide-plugin.xml
 local.py
 settings.py
 wsgi.py
-static/bootstrap/*
-static/libraries/*
-static/media/*
-static/uploads/*
+static/*
 media/*
 logs/
 pids/
