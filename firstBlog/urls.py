@@ -2,10 +2,32 @@
 from django.conf.urls import patterns, include, url
 from firstBlog.views import HomeListView
 from blog.views import ReviewListView
+from django.views.generic import TemplateView
 
-# Uncomment the next two lines to enable the admin:
+from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
+from firstBlog.sitemaps import StaticViewSitemap
+from blog.models import Post, Page
+
 from django.contrib import admin
 admin.autodiscover()
+
+
+# for sitemap
+info_dict = {
+    'queryset': Post.objects.all(),
+    'date_field': 'datetime',
+}
+info_dict2 = {
+    'queryset': Page.objects.all(),
+    'date_field': 'datetime',
+}
+sitemaps = {
+    # 'flatpages': FlatPageSitemap,
+    'static': StaticViewSitemap,
+    'blog': GenericSitemap(info_dict, priority=0.6),
+    'page': GenericSitemap(info_dict2, priority=0.7),
+}
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -26,4 +48,11 @@ urlpatterns = patterns('',
     url(r'^thankyou2.html', 'blog.views.thankyou2'),
     url(r'^review/', ReviewListView.as_view(), name='review'),
     url(r'^add-review/', 'blog.views.addReview'),
+    # url(r'^add-review/', AddReview.as_view(), name='addReview'),
+
+    url(r'^comments/', include('django.contrib.comments.urls')),
+
+    #for seo
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='blog/robots.txt'), name="robots"),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
 )

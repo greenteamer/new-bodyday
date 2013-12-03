@@ -1,4 +1,6 @@
 {% extends 'blog/base.html' %}
+{% load comments %}
+
 <!--top content-->
 {% block top_content %}
     <div class="row">
@@ -15,6 +17,28 @@
                 <h2>{{ page.title }}</h2>
                 <img class="main_image" src="{{ page.image.url }}">
                 <p>{{ page.content|safe }}</p>
+            </div>
+            {% render_comment_list for page %}
+            <a name="hide_show" class="button2 green" id="hide_show">добавить комментарий</a>
+            <div class="hide_form">
+                {% get_comment_form for page as form %}
+                    <form action="{% comment_form_target %}" method="POST">
+                    {% csrf_token %}
+                    <div>Ваше имя</div>
+                    {{ form.name }}
+                    <div>Ваша почта</div>
+                    {{ form.email }}
+                    <div>Ваш комментарий</div>
+                    {{ form.comment }}
+                    <div>Если вы напишите что то в это поле, Ваш комментарий пометиться как СПАМ</div>
+                    {{ form.honeypot }}
+                    {{ form.content_type }}
+                    {{ form.object_pk }}
+                    {{ form.timestamp }}
+                    {{ form.security_hash }}
+                    <input type="hidden" name="next" value="{% url 'review' %}" />
+                    <input type="submit" value="Отправить" id="id_submit" />
+                    </form>
             </div>
         </div>
         <!--sidebar-->

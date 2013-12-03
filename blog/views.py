@@ -61,6 +61,10 @@ class ReviewListView(ListView):
         context['photo'] = Photo.objects.all()
         return context
 
+# class AddReview(DetailView):
+#     template_name = 'blog/add-review.html'
+#     model = Review
+
 
 def addReview(request):
     form = ReviewForm(request.POST or None)

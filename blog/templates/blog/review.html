@@ -1,11 +1,14 @@
 {% extends 'blog/base.html' %}
+{% load comments %}
+
 <!--top content-->
 {% block top_content %}
     <div class="row">
-        <div class="span3"><a id="popup" class="button2" href="/contact">Оставить заявку</a></div>
+        <div class="span3"><a id="popup" class="button2 green" href="/contact">Оставить заявку</a></div>
         <div class="span9 slogan">Профессионализм в каждом движении</div>
     </div>
 {% endblock %}
+
 <!--content-->
 {% block content %}
     <div class="row">
@@ -13,11 +16,44 @@
             <div class="blog_list">
                 {% for review in review_context %}
                     {% if review.review_in_page %}
-                    <div class="review_list">
-                        <p>{{ review.datetime }}</p>
-                        <h2>{{ review.title }}</h2>
-                        <p>{{ review.review|removetags:"img"|safe }}</p>
-                    </div>
+                        <div class="review_list">
+                            <div class="review">
+                                <p>{{ review.datetime }}</p>
+                                <h2>{{ review.title }}</h2>
+                                <p>{{ review.review|removetags:"img"|safe }}</p>
+                            </div>
+    {#                        создание ответов на отзывы (ответы с помощью contrib.comment)#}
+{#                            {% render_comment_list for review %}#}
+                            {% get_comment_list for review as comment_list %}
+                                {% for comment in comment_list %}
+                                    <div id="comments">
+                                        <p class="name">{{ comment.name }}</p>
+                                        <p class="comment">{{ comment.comment }}</p>
+                                    </div>
+                                {% empty %}
+                                {% endfor %}
+                            {% if user.is_authenticated %}
+                                <a name="hide_show" class="button2 green" id="hide_show">Прокомментировать</a>
+                                <div class="hide_form">
+                                    {% get_comment_form for review as form %}
+                                    <form action="{% comment_form_target %}" method="POST">
+                                    {% csrf_token %}
+                                    <div>Ваше имя</div>
+                                    {{ form.name }}
+                                    <div>Ваш комментарий</div>
+                                    {{ form.comment }}
+                                    <div>Если вы напишите что то в это поле, Ваш комментарий пометиться как СПАМ</div>
+                                    {{ form.honeypot }}
+                                    {{ form.content_type }}
+                                    {{ form.object_pk }}
+                                    {{ form.timestamp }}
+                                    {{ form.security_hash }}
+                                    <input type="hidden" name="next" value="{% url 'review' %}" />
+                                    <input type="submit" value="Отправить" id="id_submit" />
+                                    </form>
+                                </div>
+                            {% endif %}
+                        </div>
                     {% endif %}
                 {% empty %}
                     <p>Нет постов</p>
@@ -25,6 +61,7 @@
             </div>
         <a href="/add-review" class="button2" id="popup">добавить отзыв</a>
         </div>
+
         <!--sidebar-->
         <div class="span3 sidebar">
             <h3>Последние статьи</h3>
