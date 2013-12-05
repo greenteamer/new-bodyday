@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView
 
 class ExpertListView(ListView):
     context_object_name = 'all_experts'
-    queryset = Expert.objects.all()
+    queryset = Expert.objects.all().order_by('-datetime')
     template_name = 'blog/expertlist.html'
 
     def get_context_data(self, **kwargs):

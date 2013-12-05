@@ -244,6 +244,7 @@ a.button2.green:hover {
 .navbar-fixed-top .navbar-inner.my_navbar_inner {
     background: #353535;
     padding:10px 0;
+    opacity: 0.97;
 }
 
 .my_header_content {
@@ -334,11 +335,11 @@ h2 a:hover {
 }
 
 .my_navbar_inner a {
-    color: #999999;
+    color: #C6C6C6!important;
 }
 
 .my_navbar_inner a:hover {
-    color: #FFF;
+    color: #FFF!important;
     text-decoration: none;
 }
 

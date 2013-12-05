@@ -61,10 +61,6 @@ class ReviewListView(ListView):
         context['photo'] = Photo.objects.all()
         return context
 
-# class AddReview(DetailView):
-#     template_name = 'blog/add-review.html'
-#     model = Review
-
 
 def addReview(request):
     form = ReviewForm(request.POST or None)
@@ -82,14 +78,6 @@ def addReview(request):
 
 def thankyou2(request):
     return render(request, 'blog/thankyou2.html')
-
-# def review(request):
-#     if request.method == "POST":
-#         reviewForm = forms.Review(request.POST or None)
-#         context = { 'form' : reviewForm, }
-#         if request.method == 'POST' and reviewForm.as_valid():
-#             reviewForm.save(request)
-#             return HttpResponseRedirect('blog/review.html')
 
 
 
