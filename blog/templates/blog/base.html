@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         {% block title %}
-            <title>My Blog</title>
+            <title>Массаж в Москве</title>
+            <meta name="description" content="Прекрасный способ расслабиться, восстановить силы и здоровье - это массаж в Москве, мы предлагаем делать массаж на дому. Отзывы о работе специалистов массажа." >
+            <meta name ="keywords" content="массаж в москве, массаж на дому">;
         {% endblock %}
         <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -63,7 +65,7 @@
                     <li><a href="{% url 'experts:list' %}">Специалисты</a></li>
                     <li><a href="{% url 'blog:list' %}" class="">Статьи</a></li>
                     <li><a href="{% url 'page:list' %}">О массаже</a></li>
-                    <li><a href="{% url 'page:list' %}4">Контакты</a></li>
+                    <li><a href="{% url 'page:list' %}kontakty">Контакты</a></li>
                 </ul>
             </div>
         </div>

@@ -1,11 +1,15 @@
 #coding: utf-8
 from django.db import models
 from ckeditor.fields import RichTextField
+from autoslug import AutoSlugField
 
 
 """модель статей блога"""
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    slug = AutoSlugField(editable=True, default="default")
+    description = models.CharField(max_length=255, blank=True)
+    keywords = models.CharField(max_length=255, blank=True)
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField()
     image = models.ImageField(upload_to='Blog_thumb')
@@ -30,7 +34,9 @@ class Post(models.Model):
 """модель статических страниц"""
 class Page(models.Model):
     title = models.CharField(max_length=255)
+    slug = AutoSlugField(editable=True)
     description = models.CharField(max_length=255, blank=True)
+    keywords = models.CharField(max_length=255, blank=True)
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField()
     image = models.ImageField(upload_to='Page_thumb')
@@ -51,7 +57,7 @@ class Page(models.Model):
     def __unicode__(self):
         return self.title
     def get_absolute_url(self):
-        return "/page/%i" % self.id
+        return "/page/%s" % self.slug
 
 
 """модель отзывов"""
