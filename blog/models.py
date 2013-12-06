@@ -34,7 +34,7 @@ class Post(models.Model):
 """модель статических страниц"""
 class Page(models.Model):
     title = models.CharField(max_length=255)
-    slug = AutoSlugField(editable=True)
+    slug = AutoSlugField(editable=True, default="default")
     description = models.CharField(max_length=255, blank=True)
     keywords = models.CharField(max_length=255, blank=True)
     datetime = models.DateTimeField(u'Дата публикации')
