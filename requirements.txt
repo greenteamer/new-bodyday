@@ -1,7 +1,9 @@
 Django==1.5.4
 MySQL-python==1.2.4
 Pillow==2.2.0
+South==0.8.4
 distribute==0.7.3
+django-autoslug==1.7.1
 django-ckeditor==4.0.2
 django-disqus==0.4.1
 wsgiref==0.1.2
