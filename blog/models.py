@@ -29,7 +29,7 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
     def get_absolute_url(self):
-        return "/blog/%i/" % self.id
+        return "/blog/%s/" % self.slug
 
 """модель статических страниц"""
 class Page(models.Model):
