@@ -2,6 +2,8 @@
 from blog.models import Post, Page, Review
 from gallery.models import Photo
 from django.views.generic import ListView, DetailView
+from django.views.generic.base import RedirectView
+from django.shortcuts import get_object_or_404
 
 from feedback.forms import ReviewForm
 from django.http import HttpResponseRedirect
@@ -39,15 +41,29 @@ class PageListView(ListView):
 
 
 class PageDetailView(DetailView):
-    context_object_name = 'page'
+    # context_object_name = 'page'
+    model = Page
     template_name = 'blog/pagedetail.html'
-    queryset = Page.objects.all()
+    # queryset = Page.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super(PageDetailView, self).get_context_data(**kwargs)
         context['post_in_page'] = Post.objects.all()
         context['photo'] = Photo.objects.all()
         return context
+
+
+# redirect
+# class PageRedirectView(RedirectView):
+#     permanent = True
+#     query_string = True
+#     pattern_name = 'page'
+#     # url = 'test'
+#
+#     def get_redirect_url(self, *args, **kwargs):
+#         page = get_object_or_404(Page, pk=id())
+#         page.slug()
+#         return super(PageRedirectView, self).get_redirect_url(*args, **kwargs)
 
 
 class ReviewListView(ListView):
