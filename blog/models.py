@@ -20,8 +20,8 @@ class Post(models.Model):
         default='',)
 
     class Meta:
-        verbose_name = ('Публикации')
-        verbose_name_plural = ('Публикация')
+        verbose_name = ('Статья')
+        verbose_name_plural = ('Статьи')
         ordering = ['title']
 
     def post_in_main(self):
@@ -29,7 +29,7 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
     def get_absolute_url(self):
-        return "/blog/%s/" % self.slug
+        return "/post/%s/" % self.slug
 
 """модель статических страниц"""
 class Page(models.Model):

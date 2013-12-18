@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block title %}
-    <title>Массаж в Москве {{ post.title }}</title>
+    <title>Массаж на дому | {{ post.title }}</title>
     <meta name="description" content="{{ post.description }}" >
     <meta name ="keywords" content="{{ post.keywords }}">
 {% endblock %}
@@ -13,7 +13,27 @@
 {% endblock %}
 <!--block content-->
 {% block content %}
-    <p>{{ post.datetime }}</p>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content|safe }}</p>
+    <div class="row">
+        <div class="span9">
+            <p>{{ post.datetime }}</p>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|safe }}</p>
+        </div>
+        <div class="span3 sidebar">
+            <h3>Последние статьи</h3>
+            {% for post in post_in_page %}
+                <ul>
+                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                </ul>
+            {% empty %}
+                    <p>Нет постов</p>
+            {% endfor %}
+            <h3>Техника</h3>
+            <div class="gallery_list">
+                {% for photo in photo %}
+                    {{ photo.get_mini_html|safe }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
