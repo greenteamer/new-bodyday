@@ -459,3 +459,32 @@ input#id_honeypot {
     margin-bottom: 10px;
     background: #fff;
 }
+
+/*sub_nav*/
+.submenu {
+    text-align: center;
+}
+
+.submenu a {
+    font-size: 14px;
+    color: #B32424;
+    text-transform: uppercase;
+}
+
+.submenu a:hover {
+    text-decoration: none;
+}
+
+.sub_nav {
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.sub_nav span {
+    padding: 15px 10px 15px 13px;
+    background: url(../images/line_ver.gif) repeat-y 0%;
+}
+
+.sub_nav span.sub_nav_first {
+    background: none;
+}

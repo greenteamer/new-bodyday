@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         {% block title %}
-            <title>Массаж в Москве</title>
-            <meta name="description" content="Прекрасный способ расслабиться, восстановить силы и здоровье - это массаж в Москве, мы предлагаем делать массаж на дому. Отзывы о работе специалистов массажа." >
+            <title>Массаж на дому</title>
+            <meta name="description" content="Сайт посвящен теме массажа на дому в москве. Вы можете восстановить силы и здоровье благодаря массажу, мы предлагаем индивидуальные методики. Отзывы о работе специалистов массажа." >
             <meta name ="keywords" content="массаж в москве, массаж на дому">
         {% endblock %}
         <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -62,9 +62,8 @@
                 <div class="brand my_brand"><a href="{% url 'home' %}">BodyDay.ru</a></div>
                 <ul class="nav my_nav">
                     <li><a href="{% url 'home' %}">Главная</a></li>
-                    <li><a href="{% url 'experts:list' %}">Специалисты</a></li>
-                    <li><a href="{% url 'blog:list' %}" class="">Статьи</a></li>
-                    <li><a href="{% url 'page:list' %}">О массаже</a></li>
+                    <li><a href="{% url 'page:list' %}massazh-na-domu">массаж на дому</a></li>
+                    <li><a href="{% url 'page:list' %}tseny">цены</a></li>
                     <li><a href="{% url 'page:list' %}kontakty">Контакты</a></li>
                 </ul>
             </div>
@@ -77,6 +76,23 @@
     <div class="top_content">
         <div class="container">
                 {% block top_content %}{% endblock %}
+        </div>
+    </div>
+
+    <!--sub menu-->
+    <div class="submenu">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    {% block submenu %}
+                        <div class="sub_nav">
+                            <span class="sub_nav_first"><a href="{% url 'page:list' %}">Статьи</a></span>
+                            <span><a href="{% url 'experts:list' %}">Специалисты</a></span>
+                            <span class="sub_nav_last"><a class="" href="/review">Отзывы</a></span>
+                        </div>
+                {% endblock %}
+                </div>
+            </div>
         </div>
     </div>
 
