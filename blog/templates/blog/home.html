@@ -52,7 +52,7 @@
                                     <h5>{{ post.title }}</h5>
                                     <p class="datetime">{{ post.datetime }}</p>
                                     <p>{{ post.content|removetags:"img"|truncatewords:"50"|safe }}<p>
-                                    <a class="button2" href="{{ post.get_absolute_url }}">читать</a>
+                                    <a class="button2 green" href="{{ post.get_absolute_url }}">читать</a>
                                 </div>
                             </div>
                     {% endif %}
@@ -82,7 +82,7 @@
                     <h2>{{ page.title }}</h2>
                     <h5 class="page_description">{{ page.description }}</h5>
                     <p>{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</p>
-                    <a class="button2" href="{{ page.get_absolute_url }}">подробнее</a>
+                    <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>
                 </div>
             {% endif %}
         {% empty %}

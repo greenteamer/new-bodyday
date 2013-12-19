@@ -23,7 +23,7 @@
                             <h2><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h2>
                             <img src="{{ page.image.url }}">
                             <p>{{ page.content|removetags:"img"|truncatewords:"120"|safe }}</p>
-                            <a class="button2" href="{{ page.get_absolute_url }}">читать</a>
+                            <a class="button2 green" href="{{ page.get_absolute_url }}">читать</a>
                         </div>
                     {% endif %}
                 {% empty %}

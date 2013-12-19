@@ -23,7 +23,7 @@
                         <h2>{{ post.title }}</h2>
                         <img src="{{ post.image.url }}">
                         <p>{{ post.content|removetags:"img"|truncatewords:"120"|safe }}</p>
-                        <a class="button2" href="{{ post.get_absolute_url }}">читать</a>
+                        <a class="button2 green" href="{{ post.get_absolute_url }}">читать</a>
                     </div>
                 {% empty %}
                     <p>Нет постов</p>

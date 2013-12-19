@@ -488,3 +488,18 @@ input#id_honeypot {
 .sub_nav span.sub_nav_first {
     background: none;
 }
+
+/*footer*/
+.footer {
+    background: #353535;
+    padding:18px 0 8px 0;
+}
+
+.footer p {
+    color: #BEBEBE;
+}
+
+.footer a {
+    color: #fff;
+}
+
