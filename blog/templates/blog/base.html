@@ -56,43 +56,62 @@
 <body>
 
     <!--navigation-->
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-inner my_navbar_inner">
             <div class="container">
-                <div class="brand my_brand"><a href="{% url 'home' %}">BodyDay.ru</a></div>
-                <ul class="nav my_nav">
-                    <li><a href="{% url 'home' %}">Главная</a></li>
-                    <li><a href="{% url 'page:list' %}massazh-na-domu">массаж на дому</a></li>
-                    <li><a href="{% url 'page:list' %}tseny">цены</a></li>
-                    <li><a href="{% url 'page:list' %}kontakty">Контакты</a></li>
-                </ul>
+                <div class="brand my_brand">
+                    <img src="{{STATIC_URL}}themeBodyDay/images/logo.png" alt=""/>
+                    <div class="brand_right">
+                        <a href="{% url 'home' %}">BodyDay.ru</a>
+                        <div class="top_slogan">Профессионализм в каждом движении</div>
+                    </div>
+                </div>
+                <div class="top_menu">
+                    <div class="phone">
+                        <span>8-965-408-38-01</span>
+                    </div>
+                    <ul class="nav my_nav">
+                        <li><a href="{% url 'home' %}">Главная</a></li>
+                        <li><a href="{% url 'post:list' %}">Статьи</a></li>
+                        <li><a href="{% url 'experts:list' %}">Специалисты</a></li>
+                        <li><a class="" href="/review">Отзывы</a></li>
+                        <li><a href="{% url 'page:list' %}tseny">цены</a></li>
+                        <li><a href="{% url 'page:list' %}kontakty">Контакты</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </div>
+
+
+    <!--submenu-->
+    <div class="top_content">
+        <div class="container">
+            {% block top_content %}
+                <div class="submenu">
+                    <div class="row">
+                        <div class="span12">
+                            {% block submenu %}
+                                <div class="sub_nav">
+                                    <span class="sub_nav_first"><a href="{% url 'page:list' %}massazh-na-domu">Массаж на дому</a></span>
+                                    <span><a href="{% url 'page:list' %}massazh-v-moskve">Массаж в Москве</a></span>
+                                    <span class="sub_nav_last"><a class="" href="{% url 'page:list' %}manualnaya-terapiya">Мануальная терапия</a></span>
+                                </div>
+                        {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
         </div>
     </div>
 
     <!--header-->
     {% block header %}{% endblock %}
-    <!--top content-->
-    <div class="top_content">
-        <div class="container">
-                {% block top_content %}{% endblock %}
-        </div>
-    </div>
 
-    <!--sub menu-->
-    <div class="submenu">
+    <!--top content-->
+    <div class="white_line">
         <div class="container">
-            <div class="row">
-                <div class="span12">
-                    {% block submenu %}
-                        <div class="sub_nav">
-                            <span class="sub_nav_first"><a href="{% url 'page:list' %}">Статьи</a></span>
-                            <span><a href="{% url 'experts:list' %}">Специалисты</a></span>
-                            <span class="sub_nav_last"><a class="" href="/review">Отзывы</a></span>
-                        </div>
-                {% endblock %}
-                </div>
-            </div>
+                {% block white_line %}{% endblock %}
         </div>
     </div>
 

@@ -9,7 +9,7 @@
 /*}*/
 
 body {
-    padding-top: 70px;
+    /*padding-top: 70px;*/
     background: #e7e8e3;
 }
 
@@ -241,10 +241,10 @@ a.button2.green:hover {
     max-height: 261px;
 }
 
-.navbar-fixed-top .navbar-inner.my_navbar_inner {
+.navbar-static-top .navbar-inner.my_navbar_inner {
     background: #353535;
-    padding:10px 0;
-    opacity: 0.97;
+    /*padding:10px 0;*/
+    /*opacity: 0.97;*/
 }
 
 .my_header_content {
@@ -253,15 +253,27 @@ a.button2.green:hover {
 
 .nav.my_nav {
     padding:5px 0;
-    float: right;
 }
 
 .my_nav li a {
     text-transform: uppercase;
+    padding: 5px 10px!important;
+    font-size: 12px;
 }
 
 .brand.my_brand {
     font-size: 25px;
+    margin-top: 12px;
+}
+
+.my_brand img {
+    position: absolute;
+    width: 80px;
+    top:-15px;
+}
+
+.brand_right {
+    padding: 0 0 0 80px;
 }
 
 .container.my_container {
@@ -271,11 +283,13 @@ a.button2.green:hover {
 
 .top_content {
     background: #fff;
-    padding: 15px 0;
+    border-bottom: 1px solid #D4D4D4;
+    /*padding: 15px 0;*/
 }
 
 .midle_slogan {
     text-align: right;
+    padding: 5px 0;
 }
 
 .slogan {
@@ -462,7 +476,7 @@ input#id_honeypot {
 
 /*sub_nav*/
 .submenu {
-    text-align: center;
+    text-align: right;
 }
 
 .submenu a {
@@ -472,16 +486,20 @@ input#id_honeypot {
 }
 
 .submenu a:hover {
+    color: #2D2D2D;
+}
+
+.submenu a:hover {
     text-decoration: none;
 }
 
 .sub_nav {
-    margin: 20px 0;
-    padding: 10px 0;
+    margin: 5px 0;
+    padding: 10px 15px;
 }
 
 .sub_nav span {
-    padding: 15px 10px 15px 13px;
+    padding: 7px 10px 7px 13px;
     background: url(../images/line_ver.gif) repeat-y 0%;
 }
 
@@ -503,3 +521,23 @@ input#id_honeypot {
     color: #fff;
 }
 
+/*white_line*/
+.white_line {
+    background: #fff;
+}
+
+.phone {
+    color: #fff;
+    text-align: right;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.top_menu {
+    float: right;
+}
+
+.top_slogan {
+    font-size: 15px;
+}
