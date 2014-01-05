@@ -169,26 +169,21 @@ a.button:hover {
 }
 
 a.button2 {
-    background: url(../images/button.gif) repeat-x 0% 0%;
+   background: #D45959;
     display: inline-block;
     height: 33px;
     overflow: hidden;
-    margin: 0 0 2px 0;
+    margin: 7px 0 2px 0px;
     padding: 0 15px;
     vertical-align: top;
     border: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    letter-spacing: 1px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     line-height: 34px;
+    letter-spacing: 1px;
     font-family: 'Poiret One', serif;
-    font-style: normal!important;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
     text-transform: uppercase;
     color: #fff !important;
     -webkit-transition: 2ms;
@@ -206,15 +201,13 @@ a.button2.green {
 }
 
 a.button2:hover {
-    background-position: 0% -37px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
     -webkit-transition: 2ms;
     -moz-transition: 2ms;
     -o-transition: 2ms;
     transition: 2ms;
     text-decoration: none;
+    background: #59D494;
+    color: #000!important;
 }
 
 a.button2.green:hover {
@@ -272,12 +265,12 @@ a.button2.green:hover {
 
 .my_brand img {
     position: absolute;
-    width: 80px;
+    width: 50px;
     top:-15px;
 }
 
 .brand_right {
-    padding: 0 0 0 80px;
+    padding: 0 0 0 60px;
 }
 
 .container.my_container {
