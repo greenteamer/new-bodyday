@@ -15,7 +15,7 @@
 {#                        <p>{{ expert.datetime }}</p>#}
                         <h2>{{ expert.title }}</h2>
                         <img src="{{ expert.image.url }}">
-                        <p>{{ expert.content|removetags:"img"|safe }}</p>
+                        <p>{{ expert.content|removetags:"img"|truncatewords:"45"|safe }}</p>
                         <a class="button2 green" href="{{ expert.get_absolute_url }}">подробнее</a>
                     </div>
                 {% empty %}
