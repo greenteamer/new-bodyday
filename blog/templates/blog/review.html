@@ -7,13 +7,21 @@
             <meta name ="keywords" content="массаж в москве отзывы, массаж на дому отзывы">
 {% endblock %}
 
-{#<!--top content-->#}
-{#{% block top_content %}#}
-{#    <div class="row">#}
-{#        <div class="span3"><a id="popup" class="button2" href="/contact">Оставить заявку</a></div>#}
+{% block top_content %}
+    <div class="row">
+        <div class="span3"><a id="popup" class="button2" href="/contact">Заказать массаж</a></div>
 {#        <div class="span9 slogan">Профессионализм в каждом движении</div>#}
-{#    </div>#}
-{#{% endblock %}#}
+        <div class="submenu span9">
+            {% block submenu %}
+                <div class="sub_nav">
+                    <span class="sub_nav_first"><a href="{% url 'page:list' %}massazh-na-domu">Массаж на дому</a></span>
+                    <span><a href="{% url 'page:list' %}massazh-v-moskve">Массаж в Москве</a></span>
+                    <span class="sub_nav_last"><a class="" href="{% url 'page:list' %}manualnaya-terapiya">Мануальная терапия</a></span>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
 
 <!--content-->
 {% block content %}

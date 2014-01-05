@@ -173,7 +173,7 @@ a.button2 {
     display: inline-block;
     height: 33px;
     overflow: hidden;
-    margin: 0 0 2px 0;
+    margin: 7px 0 2px 0;
     padding: 0 15px;
     vertical-align: top;
     border: none;
@@ -272,12 +272,12 @@ a.button2.green:hover {
 
 .my_brand img {
     position: absolute;
-    width: 80px;
+    width: 50px;
     top:-15px;
 }
 
 .brand_right {
-    padding: 0 0 0 80px;
+    padding: 0 0 0 60px;
 }
 
 .container.my_container {
