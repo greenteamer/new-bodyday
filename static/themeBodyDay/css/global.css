@@ -56,31 +56,6 @@ body {
     text-align: center;
 }
 
-a.button {
-    background: url(../images/caption_button.gif) repeat-x 0% 0%;
-    display: inline-block;
-    height: 48px;
-    margin: 12px 0 11px 0;
-    padding: 0 22px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    vertical-align: top;
-    line-height: 48px;
-    font-family: 'Poiret One', serif, serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-}
-a.button:hover {
-    background-position: 0% -48px;
-}
-
 .submit-preview {
     background: #1D8934;
     display: inline-block;
@@ -168,7 +143,9 @@ a.button:hover {
     transition: 2ms;
 }
 
-a.button2 {
+a.button,
+a.button2,
+a.button2.green {
    background: #D45959;
     display: inline-block;
     height: 33px;
@@ -183,7 +160,7 @@ a.button2 {
     line-height: 34px;
     letter-spacing: 1px;
     font-family: 'Poiret One', serif;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     color: #fff !important;
     -webkit-transition: 2ms;
@@ -192,36 +169,43 @@ a.button2 {
     transition: 2ms;
 }
 
-a.button2.green {
-    background: #1D8934;
-    -webkit-transition: 2ms;
-    -moz-transition: 2ms;
-    -o-transition: 2ms;
-    transition: 2ms;
-}
+/*a.button2.green {*/
+    /*background: #1D8934;*/
+    /*-webkit-transition: 2ms;*/
+    /*-moz-transition: 2ms;*/
+    /*-o-transition: 2ms;*/
+    /*transition: 2ms;*/
+/*}*/
 
-a.button2:hover {
+a.button:hover,
+a.button2:hover,
+a.button2.green:hover{
     -webkit-transition: 2ms;
     -moz-transition: 2ms;
     -o-transition: 2ms;
     transition: 2ms;
     text-decoration: none;
-    background: #59D494;
-    color: #000!important;
+    background: #26B169;
+    color: #fff!important;
 }
 
-a.button2.green:hover {
-    background: #2D713C;
-    background-position: 0% -37px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    -webkit-transition: 2ms;
-    -moz-transition: 2ms;
-    -o-transition: 2ms;
-    transition: 2ms;
-    text-decoration: none;
+a.button {
+    margin: 12px 0 11px 0;
+    padding: 0 22px;
 }
+
+/*a.button2.green:hover {*/
+    /*background: #2D713C;*/
+    /*background-position: 0% -37px;*/
+    /*-webkit-box-shadow: 0 2px 0 #b3b79e;*/
+    /*-moz-box-shadow: 0 2px 0 #b3b79e;*/
+    /*box-shadow: 0 2px 0 #b3b79e;*/
+    /*-webkit-transition: 2ms;*/
+    /*-moz-transition: 2ms;*/
+    /*-o-transition: 2ms;*/
+    /*transition: 2ms;*/
+    /*text-decoration: none;*/
+/*}*/
 
 .review_list a.button2.green {
     float: none;
