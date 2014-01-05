@@ -261,6 +261,10 @@ a.button2.green:hover {
     font-size: 12px;
 }
 
+.my_nav li a:active {
+    color: #fff;
+}
+
 .brand.my_brand {
     font-size: 25px;
     margin-top: 12px;
