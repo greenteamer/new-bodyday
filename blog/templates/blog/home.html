@@ -10,8 +10,8 @@
                     <div class="row">
                         <div class="span9">
                             <div class="header_slogan">
-                                <h4 >Ищите мастера по массажу?</h4>
-                                <h4>Вы на правильном пути!</h4>
+                                <p>Ищите мастера по массажу?</p>
+                                <p>Вы на правильном пути!</p>
                                 <a class="button" href="/review">Отзывы</a>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12 midle_slogan">
-                    <div class="slogan">Сергей Константинович Корябин</div>
+                    <span class="slogan">Сергей Константинович Корябин</span>
                 </div>
             </div>
         </div>
@@ -42,30 +42,30 @@
 <!--middle content-->
 {% block middle_content %}
     <div class="span12 slogan_content">
-        <h1 class="slogan_h1">Исцеление начинается здесь</h1>
+        <h1 class="slogan_h1">Массаж на дому - исцеление начинается здесь</h1>
     </div>
     <div class="span12">
         <div class="row">
             <div class="span7 main_post_padding">
-                {% for post in last_posts %}
-                    {% if post.post_in_main %}
-                            <div class="row">
-                                <div class="span2">
-                                    <img src="{{ post.image.url }}">
-                                </div>
-                                <div class="span5">
-                                    <h5>{{ post.title }}</h5>
-                                    <p class="datetime">{{ post.datetime }}</p>
-                                    <p>{{ post.content|removetags:"img"|truncatewords:"50"|safe }}<p>
-                                    <a class="button2 green" href="{{ post.get_absolute_url }}">читать</a>
-                                </div>
+                <div class="row">
+                    {% for post in last_posts %}
+                        {% if post.post_in_main %}
+                            <div class="span2">
+                                <img src="{{ post.image.url }}">
                             </div>
-                    {% endif %}
-                {% endfor %}
+                            <div class="span5">
+                                <h3>{{ post.title }}</h3>
+                                <p class="datetime">{{ post.datetime.date }}</p>
+                                <p>{{ post.content|removetags:"img"|truncatewords:"40"|safe }}<p>
+                                <a class="button2 green" href="{{ post.get_absolute_url }}">читать</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
             <div class="span5">
                 <div class="main_post_separator sidebar">
-                    <h2>Узнайте больше о видах и преимуществах разных техник массажа</h2>
+                    <h3>Узнайте больше о видах и преимуществах массажа на дому</h3>
                     <ul>
                     {% for post in last_posts %}
                         <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
@@ -80,19 +80,23 @@
 <!--content-->
 {% block content %}
     <div class="row top_seporator">
-        {% for page in page_context %}
-            {% if page.page_in_main %}
-                <div class="span4">
-                    <img src="{{ page.image.url }}">
-                    <h2>{{ page.title }}</h2>
-                    <h5 class="page_description">{{ page.description }}</h5>
-                    <p>{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</p>
-                    <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>
-                </div>
-            {% endif %}
-        {% empty %}
-            <p>Нет постов</p>
-        {% endfor %}
+        <div class="span12">
+            <div class="row">
+                {% for page in page_context %}
+                    {% if page.page_in_main %}
+                        <div class="span4 main_bottom">
+                            <img src="{{ page.image.url }}">
+                            <h2>{{ page.title }}</h2>
+                            <h5 class="page_description">{{ page.description }}</h5>
+                            <div class="content">{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</div>
+                            <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>
+                        </div>
+                    {% endif %}
+                {% empty %}
+                    <p>Нет постов</p>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock%}
 

@@ -47,15 +47,6 @@ body {
     margin: 68px;
 
 }
-
-.header_slogan h4 {
-    font-size: 40px;
-    font-family: 'Poiret One', serif;
-    line-height: 50px;
-    padding: 7px 0;
-    text-align: center;
-}
-
 .submit-preview {
     background: #1D8934;
     display: inline-block;
@@ -289,6 +280,40 @@ a.button {
 .contact {
 }
 
+
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Poiret One';
+}
+h1 {
+    font-size: 40px;
+    font-weight: 300;
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+    padding: 0px 0 37px 0;
+    margin-bottom: 50px;
+}
+h1.slogan_h1 {
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+    padding: 35px 0 37px 0;
+    margin-bottom: 0px;
+}
+h2 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 30px;
+}
+.list_page h2,
+.experts h2 {
+    text-align: left;
+}
+h3 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 25px;
+    text-align: left;
+}
+
 h5.page_description {
     margin: 0 0 20px 0;
     line-height: 15px;
@@ -297,29 +322,17 @@ h5.page_description {
     text-transform: uppercase;
     color: #535353;
 }
-
-h1.slogan_h1 {
-    background: url(../images/line_hor.gif) repeat-x 0% 100%;
-    margin-bottom: 0px;
-    padding: 35px 0 37px 0;
-    font-weight: 300 !important;
+h5 {
+    font-size: 20px;
+}
+.header_slogan p {
+    font-size: 40px;
+    background: none;
+    font-family: 'Poiret One', serif;
+    line-height: 50px;
+    padding: 7px 0;
     text-align: center;
 }
-
-h2 {
-    font-family: 'Poiret One';
-    line-height: 25px;
-}
-
-h2 a {
-    color: #333333;
-}
-
-h2 a:hover {
-    color: red;
-    text-decoration: none;
-}
-
 .sidebar a {
     font-style: italic;
     color: #B32424;
@@ -367,26 +380,42 @@ h2 a:hover {
 .datetime {
     color:#535353;
 }
-
-h5 {
-    font-size: 20px;
+.main_bottom .content {
+    min-height: 165px;
 }
 
 .post_list {
     min-height: 270px;
-    margin-bottom: 50px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 80px 40px;
+    margin-bottom: 20px;
+    background: #fff;
 }
 
 .page_list {
     min-height: 320px;
-    margin-bottom: 50px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 20px 40px;
+    margin-bottom: 20px;
+    background: #fff;
 }
-
+.page_detail {
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 80px 40px;
+    margin-bottom: 20px;
+    background: #fff;
+}
 .post_list .button2,
 .blog_list .button2 {
     float: right;
 }
-
+.page_detail .date {
+    text-align: center;
+    margin-bottom: 20px;
+}
 .page_detail img.main_image{
     float: left;
     padding-right: 20px;
