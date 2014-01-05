@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         {% block title %}
-            <title>Массаж на дому</title>
-            <meta name="description" content="Сайт посвящен теме массажа на дому в москве. Вы можете восстановить силы и здоровье благодаря массажу, мы предлагаем индивидуальные методики. Отзывы о работе специалистов массажа." >
-            <meta name ="keywords" content="массаж в москве, массаж на дому">
+            <title>Массаж на дому | bodyday.ru </title>
+            <meta name="description" content="Массаж на дому в москве, массаж лица, антицеллюлитный массаж, отзывы о работе специалистов массажа." >
+            <meta name ="keywords" content="массаж на дому, массаж в москве">
         {% endblock %}
         <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -125,7 +125,7 @@
 
     <!--content-->
     <div class="container my_container">
-        {% block content %}Empty page{% endblock %}
+        {% block content %}{% endblock %}
         {% block sidebar %}{% endblock %}
     </div> <!-- container -->
 

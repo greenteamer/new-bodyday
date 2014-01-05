@@ -9,51 +9,54 @@
 <!--block content-->
 {% block content %}
     <div class="row">
-        <div class="span9">
-            <div class="page_detail">
-                <p>{{ page.datetime }}</p>
-                <h2>{{ page.title }}</h2>
-                <img class="main_image" src="{{ page.image.url }}">
-                <p>{{ page.content|safe }}</p>
-            </div>
-            {% render_comment_list for page %}
-            <a name="hide_show" class="button2 green" id="hide_show">добавить комментарий</a>
-            <div class="hide_form">
-                {% get_comment_form for page as form %}
-                    <form action="{% comment_form_target %}" method="POST">
-                    {% csrf_token %}
-                    <div>Ваше имя</div>
-                    {{ form.name }}
-                    <div>Ваша почта</div>
-                    {{ form.email }}
-                    <div>Ваш комментарий</div>
-                    {{ form.comment }}
-                    <div>Если вы напишите что то в это поле, Ваш комментарий пометиться как СПАМ</div>
-                    {{ form.honeypot }}
-                    {{ form.content_type }}
-                    {{ form.object_pk }}
-                    {{ form.timestamp }}
-                    {{ form.security_hash }}
-                    <input type="hidden" name="next" value="{% url 'review' %}" />
-                    <input type="submit" value="Отправить" id="id_submit" />
-                    </form>
-            </div>
-        </div>
-        <!--sidebar-->
-        <div class="span3 sidebar">
-            <h3>Последние статьи</h3>
-            {% for post in post_in_page %}
-                <ul>
-                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-                </ul>
-            {% empty %}
-                    <p>Нет постов</p>
-            {% endfor %}
-            <h3>Техника</h3>
-            <div class="gallery_list">
-                {% for photo in photo %}
-                    {{ photo.get_mini_html|safe }}
-                {% endfor %}
+        <div class="span12">
+        <h1>{{ page.title }}</h1>
+            <div class="row">
+                <div class="span9">
+                    <div class="page_detail">
+                        <img class="main_image" src="{{ page.image.url }}">
+                        <p>{{ page.content|safe }}</p>
+                    </div>
+                    {% render_comment_list for page %}
+                    <a name="hide_show" class="button2 green" id="hide_show">добавить комментарий</a>
+                    <div class="hide_form">
+                        {% get_comment_form for page as form %}
+                            <form action="{% comment_form_target %}" method="POST">
+                            {% csrf_token %}
+                            <div>Ваше имя</div>
+                            {{ form.name }}
+                            <div>Ваша почта</div>
+                            {{ form.email }}
+                            <div>Ваш комментарий</div>
+                            {{ form.comment }}
+                            <div>Если вы напишите что то в это поле, Ваш комментарий пометиться как СПАМ</div>
+                            {{ form.honeypot }}
+                            {{ form.content_type }}
+                            {{ form.object_pk }}
+                            {{ form.timestamp }}
+                            {{ form.security_hash }}
+                            <input type="hidden" name="next" value="{% url 'review' %}" />
+                            <input type="submit" value="Отправить" id="id_submit" />
+                            </form>
+                    </div>
+                </div>
+                <!--sidebar-->
+                <div class="span3 sidebar">
+                    <h3>Последние статьи</h3>
+                    {% for post in post_in_page %}
+                        <ul>
+                        <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                        </ul>
+                    {% empty %}
+                            <p>Нет постов</p>
+                    {% endfor %}
+                    <h3>Техника</h3>
+                    <div class="gallery_list">
+                        {% for photo in photo %}
+                            {{ photo.get_mini_html|safe }}
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
