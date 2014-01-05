@@ -295,7 +295,7 @@ h5.page_description {
     font-family: 'Poiret One', serif;
     font-size: 18px;
     text-transform: uppercase;
-    color: #88ac02;
+    color: #535353;
 }
 
 h1.slogan_h1 {
@@ -322,11 +322,13 @@ h2 a:hover {
 
 .sidebar a {
     font-style: italic;
-    color: #000;
+    color: #B32424;
+    padding: 7px 0;
 }
 
 .sidebar a:hover {
-    color: red;
+    color: #2D2D2D;
+    text-decoration: none;
 }
 
 .my_navbar_inner a {
@@ -363,7 +365,7 @@ h2 a:hover {
 }
 
 .datetime {
-    color:#D60808;
+    color:#535353;
 }
 
 h5 {
