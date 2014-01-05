@@ -548,6 +548,7 @@ input#id_honeypot {
 
 .top_menu {
     float: right;
+    margin-top: 5px;
 }
 
 .top_slogan {
