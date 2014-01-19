@@ -33,7 +33,7 @@ def contact(request):
             #send_mail(form.request.subject, form.request.message,'teamer777@gmail.com', form.request.sender, fail_silently=False)
             #send_mail('сабжект', 'сообщение','teamer777@gmail.com', 'отправитель', fail_silently=False)
             # send_mail(subject, message,'teamer777@gmail.com', ['greenteamer@bk.ru'], html_message, fail_silently=False)
-            send_mail(subject, html_message, 'teamer777@gmail.com', ['greenteamer@bk.ru'], fail_silently=False)
+            send_mail(subject, message, 'teamer777@gmail.com', ['koryabins@mail.ru'], fail_silently=False)
             return HttpResponseRedirect('/thankyou.html') # Redirect after POST
     else:
         form = ContactForm() # An unbound form

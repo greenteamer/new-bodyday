@@ -71,8 +71,8 @@ def vmoskve(request):
         subject = u'bodyday заявка от %s' % request.POST['subject']
         message = u' %s \n телефон: %s' % (request.POST['subject'], request.POST['phone'])
         if form.is_valid(): # All validation rules pass
-            send_mail(subject, message, 'teamer777@gmail.com', ['greenteamer@bk.ru'], fail_silently=False)
-            return HttpResponseRedirect('/thankyou.html') # Redirect after POST
+            send_mail(subject, message, 'teamer777@gmail.com', ['koryabins@mail.ru'], fail_silently=False)
+            return HttpResponseRedirect('/') # Redirect after POST
     else:
         form = ShortForm()
 
