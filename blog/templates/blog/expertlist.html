@@ -9,8 +9,8 @@
 {% block content %}
     <div class="row experts">
         <div class="span12">
-            <h1>Специалисты</h1>
             <div class="row">
+                <div class="span12"><h1>Специалисты</h1></div>
                 <div class="span9">
                     <div class="blog_list">
                         {% for expert in all_experts %}
@@ -21,8 +21,6 @@
                                 <p>{{ expert.content|removetags:"img"|truncatewords:"45"|safe }}</p>
                                 <a class="button2 green" href="{{ expert.get_absolute_url }}">подробнее</a>
                             </div>
-                        {% empty %}
-                            <p>Нет постов</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -33,15 +31,7 @@
                         <ul>
                             <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
                         </ul>
-                    {% empty %}
-                            <p>Нет постов</p>
                     {% endfor %}
-                    <h3>Техника</h3>
-                    <div class="gallery_list">
-                        {% for photo in photo %}
-                            {{ photo.get_mini_html|safe }}
-                        {% endfor %}
-                    </div>
                 </div>
             </div>
         </div>

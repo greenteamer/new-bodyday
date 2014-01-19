@@ -10,5 +10,7 @@ urlpatterns = patterns('',
     # url(r'^(?P<pk>\d+)/$', PageRedirectView.as_view(), name='detail'),
 
     url(r'^review/',ReviewListView.as_view(), name='review'),
+    url(r'^massazh-v-moskve/', 'blog.views.vmoskve'),
+    # url(r'^massazh-v-moskve/', VmoskveView.as_view(), name='vmoskve'),
     url(r'^(?P<slug>[-_\w]+)/$', PageDetailView.as_view(), name='detail'),
 )

@@ -88,7 +88,7 @@
         <div class="container">
             {% block top_content %}
                 <div class="row">
-                    <div class="span3"><a id="popup" class="button2" href="/contact">Сделать массаж</a></div>
+                    <div class="span3"><a id="popup" class="button2" href="/contact">Заказать массаж</a></div>
             {#        <div class="span9 slogan">Профессионализм в каждом движении</div>#}
                     <div class="submenu span9">
                         {% block submenu %}
@@ -128,6 +128,12 @@
         {% block content %}{% endblock %}
         {% block sidebar %}{% endblock %}
     </div> <!-- container -->
+
+    {% block content2 %}
+    {% endblock %}
+
+    {% block content3 %}
+    {% endblock %}
 
     <!-- footer -->
     <div class="footer">

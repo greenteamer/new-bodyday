@@ -9,7 +9,7 @@
 /*}*/
 
 body {
-    padding-top: 70px;
+    /*padding-top: 70px;*/
     background: #e7e8e3;
 }
 
@@ -47,40 +47,6 @@ body {
     margin: 68px;
 
 }
-
-.header_slogan h4 {
-    font-size: 40px;
-    font-family: 'Poiret One', serif;
-    line-height: 50px;
-    padding: 7px 0;
-    text-align: center;
-}
-
-a.button {
-    background: url(../images/caption_button.gif) repeat-x 0% 0%;
-    display: inline-block;
-    height: 48px;
-    margin: 12px 0 11px 0;
-    padding: 0 22px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    vertical-align: top;
-    line-height: 48px;
-    font-family: 'Poiret One', serif, serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-}
-a.button:hover {
-    background-position: 0% -48px;
-}
-
 .submit-preview {
     background: #1D8934;
     display: inline-block;
@@ -111,26 +77,21 @@ a.button:hover {
 }
 
 #id_submit {
-    background: #1D8934;
-    display: block;
+    background: #D45959;
+    display: inline-block;
     height: 33px;
     overflow: hidden;
-    margin: 0 0 2px 0;
+    margin: 7px 0 2px 0px;
     padding: 0 15px;
     vertical-align: top;
     border: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    letter-spacing: 1px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     line-height: 34px;
+    letter-spacing: 1px;
     font-family: 'Poiret One', serif;
-    font-style: normal!important;
     font-size: 16px;
-    font-weight: bold;
     text-transform: uppercase;
     color: #fff !important;
     -webkit-transition: 2ms;
@@ -138,7 +99,15 @@ a.button:hover {
     -o-transition: 2ms;
     transition: 2ms;
 }
-
+#id_submit:hover {
+    -webkit-transition: 2ms;
+    -moz-transition: 2ms;
+    -o-transition: 2ms;
+    transition: 2ms;
+    text-decoration: none;
+    background: #26B169;
+    color: #fff!important;
+}
 .submit-post {
     background: #1D8934;
     display: inline-block;
@@ -168,27 +137,24 @@ a.button:hover {
     transition: 2ms;
 }
 
-a.button2 {
-    background: url(../images/button.gif) repeat-x 0% 0%;
+a.button,
+a.button2,
+a.button2.green {
+   background: #D45959;
     display: inline-block;
     height: 33px;
     overflow: hidden;
-    margin: 0 0 2px 0;
+    margin: 7px 0 2px 0px;
     padding: 0 15px;
     vertical-align: top;
     border: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    letter-spacing: 1px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     line-height: 34px;
+    letter-spacing: 1px;
     font-family: 'Poiret One', serif;
-    font-style: normal!important;
     font-size: 16px;
-    font-weight: bold;
     text-transform: uppercase;
     color: #fff !important;
     -webkit-transition: 2ms;
@@ -197,38 +163,43 @@ a.button2 {
     transition: 2ms;
 }
 
-a.button2.green {
-    background: #1D8934;
-    -webkit-transition: 2ms;
-    -moz-transition: 2ms;
-    -o-transition: 2ms;
-    transition: 2ms;
-}
+/*a.button2.green {*/
+    /*background: #1D8934;*/
+    /*-webkit-transition: 2ms;*/
+    /*-moz-transition: 2ms;*/
+    /*-o-transition: 2ms;*/
+    /*transition: 2ms;*/
+/*}*/
 
-a.button2:hover {
-    background-position: 0% -37px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
+a.button:hover,
+a.button2:hover,
+a.button2.green:hover{
     -webkit-transition: 2ms;
     -moz-transition: 2ms;
     -o-transition: 2ms;
     transition: 2ms;
     text-decoration: none;
+    background: #26B169;
+    color: #fff!important;
 }
 
-a.button2.green:hover {
-    background: #2D713C;
-    background-position: 0% -37px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    -webkit-transition: 2ms;
-    -moz-transition: 2ms;
-    -o-transition: 2ms;
-    transition: 2ms;
-    text-decoration: none;
+a.button {
+    margin: 19px 0 19px 0;
+    padding: 0 22px;
 }
+
+/*a.button2.green:hover {*/
+    /*background: #2D713C;*/
+    /*background-position: 0% -37px;*/
+    /*-webkit-box-shadow: 0 2px 0 #b3b79e;*/
+    /*-moz-box-shadow: 0 2px 0 #b3b79e;*/
+    /*box-shadow: 0 2px 0 #b3b79e;*/
+    /*-webkit-transition: 2ms;*/
+    /*-moz-transition: 2ms;*/
+    /*-o-transition: 2ms;*/
+    /*transition: 2ms;*/
+    /*text-decoration: none;*/
+/*}*/
 
 .review_list a.button2.green {
     float: none;
@@ -241,10 +212,10 @@ a.button2.green:hover {
     max-height: 261px;
 }
 
-.navbar-fixed-top .navbar-inner.my_navbar_inner {
+.navbar-static-top .navbar-inner.my_navbar_inner {
     background: #353535;
-    padding:10px 0;
-    opacity: 0.97;
+    /*padding:10px 0;*/
+    /*opacity: 0.97;*/
 }
 
 .my_header_content {
@@ -253,15 +224,31 @@ a.button2.green:hover {
 
 .nav.my_nav {
     padding:5px 0;
-    float: right;
 }
 
 .my_nav li a {
     text-transform: uppercase;
+    padding: 5px 10px!important;
+    font-size: 12px;
+}
+
+.my_nav li a:active {
+    color: #fff;
 }
 
 .brand.my_brand {
     font-size: 25px;
+    margin-top: 12px;
+}
+
+.my_brand img {
+    position: absolute;
+    width: 50px;
+    top:-15px;
+}
+
+.brand_right {
+    padding: 0 0 0 60px;
 }
 
 .container.my_container {
@@ -271,11 +258,13 @@ a.button2.green:hover {
 
 .top_content {
     background: #fff;
-    padding: 15px 0;
+    border-bottom: 1px solid #D4D4D4;
+    /*padding: 15px 0;*/
 }
 
 .midle_slogan {
     text-align: right;
+    padding: 5px 0;
 }
 
 .slogan {
@@ -294,44 +283,74 @@ a.button2.green:hover {
 .contact {
 }
 
+
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Poiret One';
+}
+h1 {
+    font-size: 40px;
+    font-weight: 300;
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+    padding: 0px 0 37px 0;
+    margin-bottom: 50px;
+}
+h1.slogan_h1 {
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+    padding: 35px 0 37px 0;
+    margin-bottom: 0px;
+}
+.review_page h1 {
+    margin-bottom: 10px;
+}
+.review_page .link {
+    margin-bottom: 10px;
+}
+h2 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 30px;
+}
+.list_page h2,
+.experts h2 {
+    text-align: left;
+}
+h3 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 25px;
+    text-align: left;
+}
+
 h5.page_description {
     margin: 0 0 20px 0;
     line-height: 15px;
     font-family: 'Poiret One', serif;
     font-size: 18px;
     text-transform: uppercase;
-    color: #88ac02;
+    color: #535353;
 }
-
-h1.slogan_h1 {
-    background: url(../images/line_hor.gif) repeat-x 0% 100%;
-    margin-bottom: 0px;
-    padding: 35px 0 37px 0;
-    font-weight: 300 !important;
+h5 {
+    font-size: 20px;
+}
+.header_slogan p {
+    font-size: 40px;
+    background: none;
+    font-family: 'Poiret One', serif;
+    line-height: 50px;
+    padding: 7px 0;
     text-align: center;
 }
-
-h2 {
-    font-family: 'Poiret One';
-    line-height: 25px;
-}
-
-h2 a {
-    color: #333333;
-}
-
-h2 a:hover {
-    color: red;
-    text-decoration: none;
-}
-
 .sidebar a {
     font-style: italic;
-    color: #000;
+    color: #B32424;
+    padding: 7px 0;
 }
 
 .sidebar a:hover {
-    color: red;
+    color: #2D2D2D;
+    text-decoration: none;
 }
 
 .my_navbar_inner a {
@@ -368,28 +387,44 @@ h2 a:hover {
 }
 
 .datetime {
-    color:#D60808;
+    color:#535353;
 }
-
-h5 {
-    font-size: 20px;
+.main_bottom .content {
+    min-height: 165px;
 }
 
 .post_list {
     min-height: 270px;
-    margin-bottom: 50px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 80px 40px;
+    margin-bottom: 20px;
+    background: #fff;
 }
 
 .page_list {
     min-height: 320px;
-    margin-bottom: 50px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 20px 40px;
+    margin-bottom: 20px;
+    background: #fff;
 }
-
+.page_detail {
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    padding: 50px 40px 80px 40px;
+    margin-bottom: 20px;
+    background: #fff;
+}
 .post_list .button2,
 .blog_list .button2 {
     float: right;
 }
-
+.page_detail .date {
+    text-align: center;
+    margin-bottom: 20px;
+}
 .page_detail img.main_image{
     float: left;
     padding-right: 20px;
@@ -458,4 +493,129 @@ input#id_honeypot {
     padding: 10px;
     margin-bottom: 10px;
     background: #fff;
+}
+
+/*sub_nav*/
+.submenu {
+    text-align: right;
+}
+
+.submenu a {
+    font-size: 14px;
+    color: #B32424;
+    text-transform: uppercase;
+}
+
+.submenu a:hover {
+    color: #2D2D2D;
+}
+
+.submenu a:hover {
+    text-decoration: none;
+}
+
+.sub_nav {
+    margin: 5px 0;
+    padding: 10px 15px;
+}
+
+.sub_nav span {
+    padding: 7px 10px 7px 13px;
+    background: url(../images/line_ver.gif) repeat-y 0%;
+}
+
+.sub_nav span.sub_nav_first {
+    background: none;
+}
+
+/*footer*/
+.footer {
+    background: #353535;
+    padding:18px 0 8px 0;
+}
+
+.footer p {
+    color: #BEBEBE;
+}
+
+.footer a {
+    color: #fff;
+}
+
+/*white_line*/
+.white_line {
+    background: #fff;
+}
+
+.phone {
+    color: #fff;
+    text-align: right;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.top_menu {
+    float: right;
+}
+
+.top_slogan {
+    font-size: 15px;
+}
+/*темизация страницы массаж в москве*/
+.custom_page h2 {
+    margin-bottom: 40px;
+}
+.block1 {
+    /*min-height: 300px;*/
+}
+.block1 img {
+    float: left;
+    width: 200px;
+    margin: 0px 10px;
+}
+.form_in_page {
+    padding: 40px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 40px;
+}
+.form_in_page input,
+.form_in_page textarea {
+    width: 100%;
+}
+.form_in_page input#id_submit {
+    width: 200px;
+}
+.section1 {
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+}
+.vmoskve .section3 {
+    margin-bottom: 0;
+}
+.content2_vmoskve h3,
+.content3_vmoskve h3 {
+    text-align: center;
+}
+.content2_vmoskve {
+    background: #696969;
+    color: #FFFFFF;
+}
+.content3_vmoskve {
+    margin-top: 40px;
+}
+.content3_vmoskve .section {
+    padding: 0 0 40px 0;
+}
+.section {
+    padding: 40px 0;
+}
+.my_h2 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 30px;
+    margin: 10px 0 40px 0;
+    font-weight: bold;
+    text-align: center;
 }
