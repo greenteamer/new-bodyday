@@ -12,6 +12,9 @@ class ContactForm(forms.Form):
     #response = forms.CharField(label=u'Response text', max_length=500,widget=forms.Textarea(attrs={'rows': 5, 'cols': 50}))
     # cc_myself = forms.BooleanField(required=False)
 
+class ShortForm(forms.Form):
+    subject = forms.CharField(label=u'Ваше имя', max_length=250)
+    phone = forms.CharField(label=u'Ваш телефон', max_length=250)
 
 class ReviewForm(forms.ModelForm):
     class Meta:

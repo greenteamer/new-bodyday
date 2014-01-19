@@ -77,26 +77,21 @@ body {
 }
 
 #id_submit {
-    background: #1D8934;
-    display: block;
+    background: #D45959;
+    display: inline-block;
     height: 33px;
     overflow: hidden;
-    margin: 0 0 2px 0;
+    margin: 7px 0 2px 0px;
     padding: 0 15px;
     vertical-align: top;
     border: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 2px 0 #b3b79e;
-    -moz-box-shadow: 0 2px 0 #b3b79e;
-    box-shadow: 0 2px 0 #b3b79e;
-    letter-spacing: 1px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     line-height: 34px;
+    letter-spacing: 1px;
     font-family: 'Poiret One', serif;
-    font-style: normal!important;
     font-size: 16px;
-    font-weight: bold;
     text-transform: uppercase;
     color: #fff !important;
     -webkit-transition: 2ms;
@@ -104,7 +99,15 @@ body {
     -o-transition: 2ms;
     transition: 2ms;
 }
-
+#id_submit:hover {
+    -webkit-transition: 2ms;
+    -moz-transition: 2ms;
+    -o-transition: 2ms;
+    transition: 2ms;
+    text-decoration: none;
+    background: #26B169;
+    color: #fff!important;
+}
 .submit-post {
     background: #1D8934;
     display: inline-block;
@@ -297,6 +300,12 @@ h1.slogan_h1 {
     background: url(../images/line_hor.gif) repeat-x 0% 100%;
     padding: 35px 0 37px 0;
     margin-bottom: 0px;
+}
+.review_page h1 {
+    margin-bottom: 10px;
+}
+.review_page .link {
+    margin-bottom: 10px;
 }
 h2 {
     font-family: 'Poiret One';
@@ -552,4 +561,70 @@ input#id_honeypot {
 
 .top_slogan {
     font-size: 15px;
+}
+/*темизация страницы массаж в москве*/
+.custom_page h2 {
+    margin-bottom: 40px;
+}
+.block1 {
+    /*min-height: 300px;*/
+}
+.block1 img {
+    float: left;
+    width: 200px;
+    margin: 0px 10px;
+}
+.form_in_page {
+    padding: 40px;
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 40px;
+}
+.form_in_page input,
+.form_in_page textarea {
+    width: 100%;
+}
+.form_in_page input#id_submit {
+    width: 200px;
+}
+.section1 {
+    background: url(../images/line_hor.gif) repeat-x 0% 100%;
+}
+.vmoskve .section3 {
+    margin-bottom: 0;
+}
+.content2_vmoskve h3,
+.content3_vmoskve h3 {
+    text-align: center;
+}
+.vmoskve h4 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.content2_vmoskve {
+    background: #696969;
+    color: #FFFFFF;
+}
+.content3_vmoskve {
+    margin-top: 40px;
+}
+.content3_vmoskve .section {
+    padding: 0 0 40px 0;
+}
+.content3_vmoskve .section1 {
+    margin-bottom: 40px;
+}
+.section {
+    padding: 40px 0;
+}
+.my_h2 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 30px;
+    margin: 10px 0 40px 0;
+    font-weight: bold;
+    text-align: center;
 }

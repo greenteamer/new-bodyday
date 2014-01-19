@@ -11,6 +11,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import render
 
+from feedback.forms import ContactForm, ShortForm
+from django.core.mail import send_mail
+
 
 class PostListView(ListView):
     context_object_name = 'last_posts'
@@ -55,6 +58,31 @@ class PageDetailView(DetailView):
         context['post_in_page'] = Post.objects.all()
         context['photo'] = Photo.objects.all()
         return context
+
+
+
+
+
+
+# массаж в москве
+def vmoskve(request):
+    if request.method == 'POST':
+        form = ShortForm(request.POST)
+        subject = u'bodyday заявка от %s' % request.POST['subject']
+        message = u' %s \n телефон: %s' % (request.POST['subject'], request.POST['phone'])
+        if form.is_valid(): # All validation rules pass
+            send_mail(subject, message, 'teamer777@gmail.com', ['greenteamer@bk.ru'], fail_silently=False)
+            return HttpResponseRedirect('/thankyou.html') # Redirect after POST
+    else:
+        form = ShortForm()
+
+    return render(request, 'blog/massazh-v-moskve.html', {
+        'form': form,
+    })
+
+
+
+
 
 
 class ReviewListView(ListView):
