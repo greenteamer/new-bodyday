@@ -214,7 +214,7 @@ a.button {
 
 .navbar-static-top .navbar-inner.my_navbar_inner {
     background: #353535;
-    /*padding:10px 0;*/
+    padding:10px 0;
     /*opacity: 0.97;*/
 }
 
@@ -557,6 +557,7 @@ input#id_honeypot {
 
 .top_menu {
     float: right;
+    margin-top: 5px;
 }
 
 .top_slogan {
