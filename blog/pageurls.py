@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
     url(r'^review/',ReviewListView.as_view(), name='review'),
     url(r'^massazh-v-moskve/', 'blog.views.vmoskve'),
+    url(r'^massazh-na-domu/', 'blog.views.nadomu'),
     # url(r'^massazh-v-moskve/', VmoskveView.as_view(), name='vmoskve'),
     url(r'^(?P<slug>[-_\w]+)/$', PageDetailView.as_view(), name='detail'),
 )
