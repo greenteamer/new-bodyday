@@ -629,6 +629,14 @@ input#id_honeypot {
     font-weight: bold;
     text-align: center;
 }
+h2.my_h2 {
+    font-family: 'Poiret One';
+    line-height: 25px;
+    font-size: 30px;
+    margin: 10px 0 40px 0;
+    font-weight: bold;
+    text-align: center;
+}
 .my_h3 {
     font-family: 'Poiret One';
     line-height: 25px;
