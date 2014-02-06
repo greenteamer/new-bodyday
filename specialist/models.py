@@ -9,13 +9,13 @@ class Expert(models.Model):
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField(u'О специалисте')
     image = models.ImageField(u'Фото', upload_to='Expert_thumb')
-    whois_choice = models.CharField(
-        max_length=7,
+    prof_choice = models.CharField(
+        max_length=10,
         choices=(
             ('massage','массаж'),
             ('kasmetolog','касметолог'),
         ),
-        default=''
+        default='',
     )
 
     class Meta:
@@ -29,5 +29,5 @@ class Expert(models.Model):
         return "/experts/%i/" % self.id
 
     def expert_choice(self):
-        return self.whois_choice
+        return self.prof_choice
 
