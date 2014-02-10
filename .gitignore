@@ -20,7 +20,7 @@ settings.py
 wsgi.py
 static/bootstrap/*
 static/admin/*
-static/libraries/*
+# static/libraries/
 static/media/*
 static/uploads/*
 media/*
