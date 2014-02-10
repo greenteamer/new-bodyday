@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -7,18 +8,24 @@
             <meta name="description" content="Массаж на дому в москве, массаж лица, антицеллюлитный массаж, отзывы о работе специалистов массажа." >
             <meta name ="keywords" content="массаж на дому, массаж в москве">
         {% endblock %}
-        <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="{{STATIC_URL}}themeBodyDay/css/global.css" rel="stylesheet">
+
+
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'themeBodyDay/css/global.css' %}" rel="stylesheet">
+
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+
+        <script type="text/javascript" src="{% static 'libraries/jquery-2.0.3.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+
         <link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-        <script src="{{STATIC_URL}}bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <script type="text/javascript" src="{{STATIC_URL}}libraries/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="{{STATIC_URL}}libraries/test.js"></script>
-        <link rel="stylesheet" href="{{STATIC_URL}}libraries/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="{{STATIC_URL}}libraries/fancybox/source/jquery.fancybox.pack.js"></script>
+
+        <script type="text/javascript" src="{% static 'libraries/test.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'libraries/fancybox/source/jquery.fancybox.css' %}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{% static 'libraries/fancybox/source/jquery.fancybox.pack.js' %}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".fancybox").fancybox();

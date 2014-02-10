@@ -264,7 +264,7 @@ a.button {
 
 .midle_slogan {
     text-align: right;
-    padding: 5px 0;
+    padding: 10px 0 5px 0;
 }
 
 .slogan {
@@ -611,6 +611,7 @@ input#id_honeypot {
 .content2_vmoskve {
     background: #696969;
     color: #FFFFFF;
+    padding: 40px 0;
 }
 .content3_vmoskve {
     margin-top: 40px;
@@ -619,9 +620,15 @@ input#id_honeypot {
     padding: 0 0 40px 0;
 }
 .content3_vmoskve .section1 {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
+}
+.profilactica {
+    margin-top: 40px;
 }
 .section {
+
+}
+.content2 {
     padding: 40px 0;
 }
 .my_h2 {
