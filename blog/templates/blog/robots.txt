@@ -1,10 +1,16 @@
 User-agent: *
 Disallow: /admin
 Disallow: /?
+Disallow: /contact
+Disallow: /ckeditor
+Disallow: /static
 
 User-agent: Yandex
 Disallow: /admin
 Disallow: /?
+Disallow: /contact
+Disallow: /ckeditor
+Disallow: /static
 
 Host: bodyday.ru
 Sitemap: http://bodyday.ru/sitemap.xml
