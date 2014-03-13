@@ -4,6 +4,11 @@ Disallow: /?
 Disallow: /contact
 Disallow: /ckeditor
 Disallow: /static
+Disallow: /add-review
+Disallow: /contact/
+Disallow: /ckeditor/
+Disallow: /static/
+Disallow: /add-review/
 
 User-agent: Yandex
 Disallow: /admin
@@ -11,6 +16,10 @@ Disallow: /?
 Disallow: /contact
 Disallow: /ckeditor
 Disallow: /static
+Disallow: /contact/
+Disallow: /ckeditor/
+Disallow: /static/
+Disallow: /add-review/
 
 Host: bodyday.ru
 Sitemap: http://bodyday.ru/sitemap.xml
