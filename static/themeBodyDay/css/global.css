@@ -673,6 +673,10 @@ h2.my_h2 {
 .center {
     /*text-align: center;*/
 }
+.center_link {
+    text-align: center;
+    margin-bottom: 30px;
+}
 img.nadomu {
     margin-top: 20px;
 }
