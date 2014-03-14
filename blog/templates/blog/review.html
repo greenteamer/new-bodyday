@@ -36,8 +36,9 @@
                             {% if review.review_in_page %}
                                 <div class="review_list">
                                     <div class="review">
-                                        <p>{{ review.datetime }}</p>
+                                        <p>{{ review.datetime }}</p>                                        
                                         <h2>{{ review.title }}</h2>
+{#                                        <img src="{{ review.image.url }}" alt=""/>#}
                                         <p>{{ review.review|removetags:"img"|safe }}</p>
                                     </div>
                                     {% get_comment_list for review as comment_list %}

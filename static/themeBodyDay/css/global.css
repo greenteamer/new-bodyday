@@ -484,6 +484,11 @@ input#id_honeypot {
 .review_list #comments {
     margin-left: 30px;
 }
+.review_list img {
+    width: 120px;
+    height: auto;
+    float: left;
+}
 
 #comments .name {
     /*font-size: 20px;*/
@@ -496,6 +501,7 @@ input#id_honeypot {
     padding: 10px;
     margin-bottom: 10px;
     background: #fff;
+    min-height: 200px;
 }
 
 /*sub_nav*/
@@ -685,6 +691,16 @@ margin-top: 10px;
 blockquote p {
     font-size: 16px;
 }
+.review_manual blockquote {
+    margin-left: 140px;
+}
+.review_manual img {
+    float: left;
+    width: 100px;
+}
+.review_manual .review_item {
+    min-height: 150px;
+}
 .review_manual h3 {
     margin-bottom: 30px;
     text-align: center;
@@ -701,7 +717,9 @@ blockquote p {
 .link_center {
     text-align: center;
 }
-
+.home_content2 {
+    padding: 60px 0;
+}
 
 
 

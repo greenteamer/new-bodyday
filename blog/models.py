@@ -64,6 +64,7 @@ class Page(models.Model):
 class Review(models.Model):
     datetime = models.DateTimeField(u'Дата публикации', auto_now=True)
     title = models.CharField(u'Имя', max_length=255)
+    image = models.ImageField(upload_to='review_thumb', default='review_thumb/good.png')
     sender = models.EmailField(u'Почта')
     review = RichTextField()
 
@@ -76,11 +77,15 @@ class Review(models.Model):
         return self.title
 
     review_choice = models.CharField(
-        max_length=7,
-        choices=(('dontposted', 'нет'),
-                 ('posted', 'да'),),
+        max_length=10,
+        choices=(
+            ('dontposted', 'не публиковать'),
+            ('posted', 'опубликовать обычный'),
+            ('extra', 'опубликовать с фото'),),
         default='')
 
     def review_in_page(self):
         return self.review_choice == 'posted'
 
+    def extra_review(self):
+        return self.review_choice == 'extra'

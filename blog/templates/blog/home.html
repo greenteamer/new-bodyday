@@ -99,28 +99,92 @@
     </div>
 {% endblock %}
 
+{% block white_content %}
+    <div class="white_section manual">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="row">
+{#                        <div class="span3">#}
+{#                            <img src="{{ STATIC_URL }}/media/img/sergei2.jpg">#}
+{#                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>#}
+{#                        </div>#}
+                        <div class="span12 review_manual">
+                            <h3>Отзывы о массаже</h3>
+                            <div class="review_item">
+                                <img src="/static/media/review_thumb/good.png">
+                                <blockquote>
+                                    <p>Пришел на первый сеанс с больной спиной. Кроме спины мучала бессонница, головные боли и постоянная слабость. Сергей Константинович на первом же сеансе вернул к жизни. Прошла боль в спине и на следующий день проснулся выспавшийся на 10 минут раньше будильника. К 6 сеансу ушла кривизна спины и сейчас, по прошествии 12 сеансов ощущение, что у меня снова тело 18 летнего парня. Спасибо мастеру за творение!</p>
+                                    <footer>Андрей<cite title="Source Title">3 февраля 2014 г.</cite></footer>
+                                </blockquote>
+                            </div>
+                            <div class="review_item">
+                                <img src="/static/media/review_thumb/alena.jpg">
+                                <blockquote>
+                                    <p>Хочу сказать большое спасибо Сергею Константиновичу. Его массаж поистине творит чудеса! У меня несколько лет болела спина в грудном отделе позвоночника. Позже к нему добавился еще шейный отдел. После пары неудачных походов к «специалистам» я уверилась в мысли о невозможности для меня жить без боли… Но встреча с Сергеем Константиновичем полностью перевернула мое понятие о массаже! После третьего сеанса боль прошла! Потом понадобилось еще несколько сеансов, чтобы закрепить результат. Теперь моя спина не болит. Я вообще забыла о существовании спины:) Хотя раньше она всегда ныла и болела, постоянно напоминая о себе. Сергей Константинович! Огромное вам спасибо! Вы настоящий профессионал в своем деле!</p>
+                                    <footer>Ирина<cite title="Source Title">7 октября 2012 г</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="link_center">
+                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 <!--content-->
 {% block content %}
-    <div class="row top_seporator">
-        <div class="span12">
-            <div class="row">
-                {% for page in page_context %}
-                    {% if page.page_in_main %}
-                        <div class="span4 main_bottom">
-                            <img src="{{ page.image.url }}">
-                            <h2>{{ page.title }}</h2>
-                            <h5 class="page_description">{{ page.description }}</h5>
-                            <div class="content">{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</div>
-                            <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>
-                        </div>
-                    {% endif %}
-                {% empty %}
-                    <p>Нет постов</p>
-                {% endfor %}
+{#    <div class="row top_seporator">#}
+{#        <div class="span12">#}
+{#            <div class="row">#}
+{#                {% for page in page_context %}#}
+{#                    {% if page.page_in_main %}#}
+{#                        <div class="span4 main_bottom">#}
+{#                            <img src="{{ page.image.url }}">#}
+{#                            <h2>{{ page.title }}</h2>#}
+{#                            <h5 class="page_description">{{ page.description }}</h5>#}
+{#                            <div class="content">{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</div>#}
+{#                            <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                {% empty %}#}
+{#                    <p>Нет постов</p>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock%}
+
+<!--content-->
+{% block content2 %}
+    <div class="container">
+        <div class="row home_content2">
+            <div class="span12">
+                <div class="row">
+                    {% for page in page_context %}
+                        {% if page.page_in_main %}
+                            <div class="span4 main_bottom">
+                                <img src="{{ page.image.url }}">
+                                <h2>{{ page.title }}</h2>
+                                <h5 class="page_description">{{ page.description }}</h5>
+                                <div class="content">{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</div>
+                                <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>
+                            </div>
+                        {% endif %}
+                    {% empty %}
+                        <p>Нет постов</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
 {% endblock%}
+
+
 
 <!--sidebar-->
 {#{% block sidebar %}#}
