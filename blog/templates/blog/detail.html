@@ -12,6 +12,17 @@
             <p>{{ post.datetime }}</p>
             <h2>{{ post.title }}</h2>
             <p>{{ post.content|safe }}</p>
+
+            <div class="post_gallery">
+                <div class="row">
+                    {% for image in post_gallery %}
+                        <div class="span3">
+                            <img src="{{ STATIC_URL }}{{ image.url }}" alt=""/>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
         <div class="span3 sidebar">
             <h3>Последние статьи</h3>

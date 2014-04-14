@@ -1,5 +1,5 @@
 #coding: utf-8
-from blog.models import Post, Page, Review
+from blog.models import *
 from gallery.models import Photo
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import RedirectView
@@ -34,6 +34,7 @@ class PostDetailView(DetailView):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['post_in_page'] = Post.objects.all()
         context['photo'] = Photo.objects.all()
+        context['post_gallery'] = PostGallery.objects.filter(post=self.object)
         return context
 
 

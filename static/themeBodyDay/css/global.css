@@ -12,7 +12,9 @@ body {
     /*padding-top: 70px;*/
     background: #e7e8e3;
 }
-
+img {
+    border-radius: 3px;
+}
 .blog_list img {
     float: left;
     width: auto;
@@ -200,7 +202,9 @@ a.button {
     /*transition: 2ms;*/
     /*text-decoration: none;*/
 /*}*/
-
+.right {
+    float: right;
+}
 .review_list a.button2.green {
     float: none;
 }
@@ -674,7 +678,7 @@ h2.my_h2 {
     /*text-align: center;*/
 }
 img.nadomu {
-    margin-top: 20px;
+    margin-top: 60px;
 }
 .experts h3 {
     text-align: center;
@@ -697,6 +701,7 @@ blockquote p {
 .review_manual img {
     float: left;
     width: 100px;
+    border-radius: 3px;
 }
 .review_manual .review_item {
     min-height: 150px;
