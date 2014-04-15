@@ -753,7 +753,6 @@ blockquote p {
 #modern .frame ul li {
     float: left;
     height: 100%;
-    width:320px!important;
     padding: 20px 20px;
 }
 #modern .frame ul li.first {
