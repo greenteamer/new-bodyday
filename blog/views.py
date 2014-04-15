@@ -99,6 +99,8 @@ def nadomu(request):
 
 # мануальная терапия
 def manual(request):
+    review_context = Review.objects.all()
+    post_gallery = PostGallery.objects.filter(post_id=7)
     if request.method == 'POST':
         form = ShortForm(request.POST)
         subject = u'bodyday заявка от %s' % request.POST['subject']
@@ -111,10 +113,9 @@ def manual(request):
 
     return render(request, 'blog/manualnaya-terapiya.html', {
         'form': form,
+        'review_context': review_context,
+        'post_gallery': post_gallery,
     })
-
-
-
 
 
 

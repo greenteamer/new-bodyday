@@ -1,4 +1,4 @@
-from blog.models import Post, Page
+from blog.models import Post, Page, Review
 from gallery.models import Photo
 from django.views.generic import ListView, DetailView
 
@@ -11,5 +11,6 @@ class HomeListView(ListView):
         context = super(HomeListView, self).get_context_data(**kwargs)
         context['photo_context'] = Photo.objects.all()
         context['page_context'] = Page.objects.all()
+        context['review_context'] = Review.objects.all()
         # And so on for more models
         return context

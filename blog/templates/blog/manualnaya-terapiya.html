@@ -98,29 +98,38 @@
             <div class="row">
                 <div class="span12">
                     <div class="row">
-{#                        <div class="span3">#}
-{#                            <img src="{{ STATIC_URL }}/media/img/sergei2.jpg">#}
-{#                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>#}
-{#                        </div>#}
                         <div class="span12 review_manual">
-                            <h3>Отзывы о мануальной терапии</h3>
-                            <div class="review_item">
-                                <img src="/static/media/review_thumb/good.png">
-                                <blockquote>
-                                    <p>Пришел на первый сеанс с больной спиной. Кроме спины мучала бессонница, головные боли и постоянная слабость. Сергей Константинович на первом же сеансе вернул к жизни. Прошла боль в спине и на следующий день проснулся выспавшийся на 10 минут раньше будильника. К 6 сеансу ушла кривизна спины и сейчас, по прошествии 12 сеансов ощущение, что у меня снова тело 18 летнего парня. Спасибо мастеру за творение!</p>
-                                    <footer>Андрей<cite title="Source Title">3 февраля 2014 г.</cite></footer>
-                                </blockquote>
+                            <h3>Отзывы о массаже</h3>
+
+{#                    слайдер ОТЗЫВЫ#}
+                            <div class="featurette">
+                                <div class="controls marginbottom">
+                                    <a class="button2" id="modern_prev"><i class="fa fa-angle-left"></i>Назад</a>
+                                    <span class="divider"></span>
+                                    <a class="button2" id="modern_next">Вперед<i class="fa fa-angle-right"></i></a>
+                                </div>
                             </div>
-                            <div class="review_item">
-                                <img src="/static/media/review_thumb/good.png">
-                                <blockquote>
-                                    <p>Сергей Константинович, я очень рада, что попала на сеанс массажа именно к Вам. Вы действительно владеете секретом мануальной терапии. То, что произошло с моей спиной, не возможно не назвать ЧУДОМ! Как приятно засыпать и просыпаться без болей в позвоночнике (которые длились несколько месяцев). Я счастлива, что доверилась Вашим рукам. Спасибо Вам огромное! Ирина.</p>
-                                    <footer>Ирина<cite title="Source Title">7 октября 2012 г</cite></footer>
-                                </blockquote>
+                            <div class="mightySlider mightyslider_windows8_skin" id="modern">   <!-- PARENT -->
+                                <div class="frame review_manual">   <!-- FRAME -->
+                                    <ul class="slideelement">   <!-- SLIDEELEMENT -->
+                                        {% for review in review_context %}
+                                            <li class="{% if review == review_context|first %}first{% endif %}">
+                                                <div class="review_item">
+                                                    <img src="{{ STATIC_URL }}media/review_thumb/good.png">
+                                                    <p>{{ review.review|truncatewords:"43"|safe }} </p>
+                                                    <a href="/review/">подробнее</a>
+                                                    <footer>{{ review.title }}<br/>{{ review.datetime }}</footer>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link_center">
-                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>
+
+                            <div class="link_center">
+                                <a id="popup" class="button2" href="/contact">Заказать массаж</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -171,5 +180,29 @@
 {% endblock %}
 
 {% block content3 %}
+    {% if post_gallery %}
+    <div class="content3_vmoskve">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="post_gallery">
+                        <div class="row">
+                            <div class="span12">
+                                <div class="my_h2">Специалист по мануальной терапии Корябин Сергей</div>
+                            </div>
+                            {% for image in post_gallery %}
+                                <div class="span2">
+                                    <a class="fancybox" rel="gallery2" href="{{ STATIC_URL }}{{ image.url }}">
+                                        <img src="{{ STATIC_URL }}{{ image.url }}" alt="">
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}
 
