@@ -15,11 +15,6 @@
                                 <a class="button" href="/review">Отзывы</a>
                             </div>
                         </div>
-{#                        <div class="span3">#}
-{#                            <div class="header_img_wrapper">#}
-{#                                <img src="{{ STATIC_URL }}/media/img/sergei2.jpg">#}
-{#                            </div>#}
-{#                        </div>#}
                     </div>
                 </div>
             </div>
@@ -36,25 +31,6 @@
                         <div class="share42init"></div>
                         <script type="text/javascript" src="http://bodyday.ru/static/libraries/share42/share42.js"></script>
                     </span>
-
-{#                    <!-- Button to trigger modal -->#}
-{#                <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>#}
-{##}
-{#                <!-- Modal -->#}
-{#                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">#}
-{#                    <div class="modal-header">#}
-{#                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>#}
-{#                        <h3 id="myModalLabel">Modal header</h3>#}
-{#                    </div>#}
-{#                    <div class="modal-body">#}
-{#                        <p>One fine body…</p>#}
-{#                    </div>#}
-{#                    <div class="modal-footer">#}
-{#                        <button class="btn" data-dismiss="modal" aria-hidden="true">Отменить</button>#}
-{#                        <button class="btn btn-primary">Отправить</button>#}
-{#                    </div>#}
-{#                </div>#}
-
                 </div>
             </div>
         </div>
@@ -103,60 +79,49 @@
     <div class="white_section manual">
         <div class="container">
             <div class="row">
-                <div class="span12">
-                    <div class="row">
-{#                        <div class="span3">#}
-{#                            <img src="{{ STATIC_URL }}/media/img/sergei2.jpg">#}
-{#                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>#}
-{#                        </div>#}
-                        <div class="span12 review_manual">
-                            <h3>Отзывы о массаже</h3>
-                            <div class="review_item">
-                                <img src="/static/media/review_thumb/good.png">
-                                <blockquote>
-                                    <p>Пришел на первый сеанс с больной спиной. Кроме спины мучала бессонница, головные боли и постоянная слабость. Сергей Константинович на первом же сеансе вернул к жизни. Прошла боль в спине и на следующий день проснулся выспавшийся на 10 минут раньше будильника. К 6 сеансу ушла кривизна спины и сейчас, по прошествии 12 сеансов ощущение, что у меня снова тело 18 летнего парня. Спасибо мастеру за творение!</p>
-                                    <footer>Андрей<cite title="Source Title">3 февраля 2014 г.</cite></footer>
-                                </blockquote>
-                            </div>
-                            <div class="review_item">
-                                <img src="/static/media/review_thumb/alena.jpg">
-                                <blockquote>
-                                    <p>Хочу сказать большое спасибо Сергею Константиновичу. Его массаж поистине творит чудеса! У меня несколько лет болела спина в грудном отделе позвоночника. Позже к нему добавился еще шейный отдел. После пары неудачных походов к «специалистам» я уверилась в мысли о невозможности для меня жить без боли… Но встреча с Сергеем Константиновичем полностью перевернула мое понятие о массаже! После третьего сеанса боль прошла! Потом понадобилось еще несколько сеансов, чтобы закрепить результат. Теперь моя спина не болит. Я вообще забыла о существовании спины:) Хотя раньше она всегда ныла и болела, постоянно напоминая о себе. Сергей Константинович! Огромное вам спасибо! Вы настоящий профессионал в своем деле!</p>
-                                    <footer>Ирина<cite title="Source Title">7 октября 2012 г</cite></footer>
-                                </blockquote>
-                            </div>
+                <div class="span12 review_manual">
+                    <h3>Отзывы о массаже</h3>
+
+{#                    слайдер ОТЗЫВЫ#}
+                    <div class="featurette">
+                        <div class="controls marginbottom">
+                            <a class="button2" id="modern_prev"><i class="fa fa-angle-left"></i>Назад</a>
+                            <span class="divider"></span>
+                            <a class="button2" id="modern_next">Вперед<i class="fa fa-angle-right"></i></a>
                         </div>
-                        <div class="link_center">
-                            <a id="popup" class="button2" href="/contact">Заказать массаж</a>
+                    </div>
+                    <div class="mightySlider mightyslider_windows8_skin" id="modern">   <!-- PARENT -->
+                        <div class="frame review_manual">   <!-- FRAME -->
+                            <ul class="slideelement">   <!-- SLIDEELEMENT -->
+                                {% for review in review_context %}
+                                    <li class="{% if review == review_context|first %}first{% endif %}">
+                                        <div class="review_item">
+                                            <img src="{{ STATIC_URL }}media/review_thumb/good.png">
+                                            <p>{{ review.review|truncatewords:"43"|safe }} </p>
+                                            <a href="/review/">подробнее</a>
+                                            <footer>{{ review.title }}<br/>{{ review.datetime }}</footer>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
                         </div>
+                    </div>
+
+                    <div class="link_center">
+                        <a id="popup" class="button2" href="/contact">Заказать массаж</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
 {% endblock %}
 
 <!--content-->
 {% block content %}
-{#    <div class="row top_seporator">#}
-{#        <div class="span12">#}
-{#            <div class="row">#}
-{#                {% for page in page_context %}#}
-{#                    {% if page.page_in_main %}#}
-{#                        <div class="span4 main_bottom">#}
-{#                            <img src="{{ page.image.url }}">#}
-{#                            <h2>{{ page.title }}</h2>#}
-{#                            <h5 class="page_description">{{ page.description }}</h5>#}
-{#                            <div class="content">{{ page.content|removetags:"img"|truncatewords:"40"|safe }}</div>#}
-{#                            <a class="button2 green" href="{{ page.get_absolute_url }}">подробнее</a>#}
-{#                        </div>#}
-{#                    {% endif %}#}
-{#                {% empty %}#}
-{#                    <p>Нет постов</p>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
 {% endblock%}
 
 <!--content-->
@@ -183,19 +148,3 @@
         </div>
     </div>
 {% endblock%}
-
-
-
-<!--sidebar-->
-{#{% block sidebar %}#}
-{#    <div class="span3">#}
-{#        <h2>Сайдбар</h2>#}
-{#        {% for post in last_posts %}#}
-{#            <ul>#}
-{#            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>#}
-{#            </ul>#}
-{#        {% empty %}#}
-{#                <p>Нет постов</p>#}
-{#        {% endfor %}#}
-{#    </div>#}
-{#{% endblock %}#}

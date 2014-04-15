@@ -1,5 +1,5 @@
 #coding: utf-8
-from blog.models import Post, Page, Review
+from blog.models import *
 from gallery.models import Photo
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import RedirectView
@@ -34,6 +34,7 @@ class PostDetailView(DetailView):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['post_in_page'] = Post.objects.all()
         context['photo'] = Photo.objects.all()
+        context['post_gallery'] = PostGallery.objects.filter(post=self.object)
         return context
 
 
@@ -98,6 +99,8 @@ def nadomu(request):
 
 # мануальная терапия
 def manual(request):
+    review_context = Review.objects.all()
+    post_gallery = PostGallery.objects.filter(post_id=7)
     if request.method == 'POST':
         form = ShortForm(request.POST)
         subject = u'bodyday заявка от %s' % request.POST['subject']
@@ -110,10 +113,9 @@ def manual(request):
 
     return render(request, 'blog/manualnaya-terapiya.html', {
         'form': form,
+        'review_context': review_context,
+        'post_gallery': post_gallery,
     })
-
-
-
 
 
 

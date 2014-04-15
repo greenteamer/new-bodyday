@@ -20,7 +20,7 @@
                 <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
                 </ul>
             {% empty %}
-                    <p>Нет постов</p>
+                <p>Нет постов</p>
             {% endfor %}
             <h3>Техника</h3>
             <div class="gallery_list">
@@ -29,5 +29,25 @@
                 {% endfor %}
             </div>
         </div>
+
+        {% if post_gallery %}
+            <div class="span12">
+                <div class="post_gallery">
+                    <div class="row">
+                        <div class="span12">
+                            <h4>Галерея поста</h4>
+                        </div>
+                        {% for image in post_gallery %}
+                            <div class="span2">
+                                <a class="fancybox" rel="gallery2" href="{{ STATIC_URL }}{{ image.url }}">
+                                    <img src="{{ STATIC_URL }}{{ image.url }}" alt="">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
     </div>
 {% endblock %}

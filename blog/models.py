@@ -13,6 +13,7 @@ class Post(models.Model):
     datetime = models.DateTimeField(u'Дата публикации')
     content = RichTextField()
     image = models.ImageField(upload_to='Blog_thumb')
+
     main_post_choice = models.CharField(
         max_length=7,
         choices=(('notmain', 'нет'),
@@ -89,3 +90,12 @@ class Review(models.Model):
 
     def extra_review(self):
         return self.review_choice == 'extra'
+
+
+"""модель галереи"""
+class PostGallery(models.Model):
+    image = models.ImageField(upload_to='gallery/post_gallery', verbose_name=u'Галерея статьи')
+    post = models.ForeignKey(Post, verbose_name=u'для какой статьи')
+
+    def url(self):
+        return 'media/%s' % self.image
