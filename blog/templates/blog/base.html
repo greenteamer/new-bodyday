@@ -219,12 +219,12 @@
         		// Modern Example
                 (function(){
                     function calculator(width){
-                        var percent = '33.33%';
+                        var percent = '50%';
                         if (width <= 768) {
-                            percent = '50%';
+                            percent = '100%';
                         }
                         else {
-                            percent = '33.33%';
+                            percent = '50%';
                         }
                         return percent;
                     };
@@ -235,16 +235,18 @@
                         speed: 500,
                         autoScale: 1,
                         viewport: 'fill',
+                        startAt: 0,
 
                         // Navigation options
                         navigation: {
                             navigationType: 'basic',
-                            activateOn:     clickEvent,
+                            horizontal: 1,
+                            activateOn: clickEvent,
                             slideSize: calculator($win.width())
                         },
 
                         cycling: {
-                            cycleBy:       'pages', // Enable automatic cycling by 'slides' or 'pages'.
+{#                            cycleBy:       'slides', // Enable automatic cycling by 'slides' or 'pages'.#}
                             pauseTime:     5000, // Delay between cycles in milliseconds.
                             pauseOnHover:  0,    // Pause cycling when mouse hovers over the FRAME.
                             startPaused:   0     // Whether to start in paused sate.
