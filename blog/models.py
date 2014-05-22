@@ -66,7 +66,7 @@ class Review(models.Model):
     datetime = models.DateTimeField(u'Дата публикации', auto_now=True)
     title = models.CharField(u'Имя', max_length=255)
     image = models.ImageField(upload_to='review_thumb', default='review_thumb/good.png')
-    sender = models.EmailField(u'Почта')
+    sender = models.EmailField(u'Почта', blank=True)
     review = RichTextField()
 
     class Meta:
