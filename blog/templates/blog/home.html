@@ -97,7 +97,7 @@
                                     <li class="{% if review == review_context|first %}first{% endif %}">
                                         <div class="review_item">
                                             <img src="{{ STATIC_URL }}media/{{ review.image }}">
-                                            <p>{{ review.review|truncatewords:"35"|safe }}</p>
+                                            <p>{{ review.review|truncatewords:"43"|safe }}</p>
                                             <a href="/review/">подробнее</a>
                                             <footer>{{ review.title }}<br/>{{ review.datetime }}</footer>
                                         </div>
