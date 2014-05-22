@@ -92,12 +92,12 @@
                     </div>
                     <div class="mightySlider mightyslider_windows8_skin" id="modern">   <!-- PARENT -->
                         <div class="frame review_manual">   <!-- FRAME -->
-                            <ul class="slideelement">   <!-- SLIDEELEMENT -->
+                            <ul class="slide_element">   <!-- SLIDEELEMENT -->
                                 {% for review in review_context %}
                                     <li class="{% if review == review_context|first %}first{% endif %}">
                                         <div class="review_item">
-                                            <img src="{{ STATIC_URL }}media/review_thumb/good.png">
-                                            <p>{{ review.review|truncatewords:"43"|safe }} </p>
+                                            <img src="{{ STATIC_URL }}media/{{ review.image }}">
+                                            <p>{{ review.review|truncatewords:"43"|safe }}</p>
                                             <a href="/review/">подробнее</a>
                                             <footer>{{ review.title }}<br/>{{ review.datetime }}</footer>
                                         </div>
